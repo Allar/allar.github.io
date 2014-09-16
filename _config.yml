@@ -6,14 +6,14 @@ highlighter:         true
 permalink:        pretty
 
 # Setup
-title:            Hyde
+title:            Allar
 tagline:          'A Jekyll theme'
-description:      'A brazen two-column <a href="http://jekyllrb.com" target="_blank">Jekyll</a> theme that pairs a prominent sidebar with uncomplicated content. Made by <a href="https://twitter.com/mdo" target="_blank">@mdo</a>.'
-url:              http://hyde.getpoole.com
+description:      "<a href=\"https://twitter.com/michaelallar\" target=\"_blank\">@michaelallar</a>'s random writings about the development of things."
+url:              http://michaelallar.com
 
 author:
-  name:           'Mark Otto'
-  url:            https://twitter.com/mdo
+  name:           'Michael Allar'
+  url:            https://twitter.com/michaelallar
 
 paginate:         5
 
