@@ -8,7 +8,7 @@ permalink:        pretty
 # Setup
 title:            Allar
 tagline:          'A Jekyll theme'
-description:      "<a href=\"https://twitter.com/michaelallar\" target=\"_blank\">@michaelallar</a>'s random writings about the development of things."
+description:      "<a href=\"https://twitter.com/michaelallar\" target=\"_blank\">@michaelallar</a>'s random, generally technical, writings about the development of things."
 url:              http://michaelallar.com
 
 author:
@@ -20,5 +20,11 @@ paginate:         5
 # Custom vars
 version:          2.0.0
 
-github:
-  repo:           https://github.com/poole/hyde
+defaults:
+  -
+    scope:
+      path: "" # an empty string here means all files in the project
+      type: "posts" # previously `post` in Jekyll 2.2.
+    values:
+      disqusidentifier: home_change_me
+      comments: true

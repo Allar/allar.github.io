@@ -7,7 +7,6 @@ layout: default
   <span class="post-date">{{ page.date | date_to_string }}</span>
   {{ content }}
 </div>
-
 <div class="related">
   <h2>Related Posts</h2>
   <ul class="related-posts">
@@ -23,3 +22,6 @@ layout: default
     {% endfor %}
   </ul>
 </div>
+<h2>Comments On This Post</h2>
+{% include comments.html %}
+
