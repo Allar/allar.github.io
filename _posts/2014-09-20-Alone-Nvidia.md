@@ -4,7 +4,7 @@ title: "The Announcement of Alone in the Dark: Illumination"
 disqusidentifier: alone_nvidia
 ---
 
-[![Alone in the Dark: Illumination, Cemetary]({{ site.url }}/assets/aitd_cemetary_720.jpg)]({{ site.url }}/assets/aitd_cemetary.jpg)
+[![Alone in the Dark: Illumination, Cemetary](/assets/aitd_cemetary_720.jpg)](/assets/aitd_cemetary.jpg)
 
 I am currently working at Pure FPS, a small game dev team in Los Angeles, which is doing live operational support for the game Nether as well as developing the game Alone in the Dark: Illumination under the world-renowned publisher Atari. These are just some minor thoughts about what it was like to announce our game. I'll have to loosely summarize though as there are many things that are still confidential, but I felt this was worthy of a blog post.
 
