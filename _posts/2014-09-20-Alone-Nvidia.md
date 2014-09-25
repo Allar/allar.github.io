@@ -1,7 +1,6 @@
 ---
 layout: post
 title: "The Announcement of Alone in the Dark: Illumination"
-disqusidentifier: alone_nvidia
 ---
 
 [![Alone in the Dark: Illumination, Cemetary](/assets/aitd_cemetary_720.jpg)](/assets/aitd_cemetary.jpg)

@@ -28,3 +28,6 @@ defaults:
     values:
       disqusidentifier: home_change_me
       comments: true
+      
+gems:
+  - jekyll-sitemap
