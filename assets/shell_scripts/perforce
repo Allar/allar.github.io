@@ -30,7 +30,7 @@ case "$1" in
     ;;
 
 *)
-  echo "Usage: /etc/init.d/perforce (start|stop|restart)
+  echo "Usage: /etc/init.d/perforce (start|stop|restart)"
   exit 1
   ;;
 
