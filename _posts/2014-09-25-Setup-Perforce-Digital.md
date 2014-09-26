@@ -1,13 +1,13 @@
 ---
 layout: post
-title: "Setting up version control (Perforce) for Unreal Engine 4 using DigitalOcean"
+title: "Setting up version control (Perforce) for Unreal Engine 4 using DigitalOcean and Ubuntu (Part 1)"
 ---
 
-A common question with [Unreal Engine 4 (UE4)](http://www.unrealengine.com) is "how do you set up version control?" I think this is a very important question and if you have never used version control for your projects you are crippling yourself from the start. I won't go into details as to [why you should use version control](http://gameindustry.about.com/od/game-development/a/The-Importance-Of-Version-Control-Management-In-Game-Development.htm) or [how to use version control](http://betterexplained.com/articles/a-visual-guide-to-version-control/). I will be just covering how to get a basic setup going.
+A common question with [Unreal Engine 4 (UE4)](http://www.unrealengine.com) is "how do you set up version control?" I think this is a very important question and if you have never used version control for your projects you are crippling yourself from the start. I won't go into details about [why you should use version control](http://gameindustry.about.com/od/game-development/a/The-Importance-Of-Version-Control-Management-In-Game-Development.htm) or [how to use version control](http://betterexplained.com/articles/a-visual-guide-to-version-control/). I will be just covering how to get a basic setup going.
 
-There are many types of source control that exist in the wild but for game development generally [Perforce](http://www.perforce.com/), [Git](http://git-scm.com/), and [Subversion](https://subversion.apache.org/) are used. There are many differences between these source control systems and whether or not one is better than the other can be debated endlessly. UE4 has editor support for both Perforce and Subversion, but a [community plugin for Git](http://srombauts.github.io/UE4GitPlugin/) also exists, although I'm not too familiar with it.
+There are many types of source control that exist in the wild but for game development, the most common being [Perforce](http://www.perforce.com/), [Git](http://git-scm.com/), and [Subversion](https://subversion.apache.org/). There are many differences between these source control systems and whether or not one is better than the other are endlessly debatable. UE4 has editor support for both Perforce and Subversion, but a [community plugin for Git](http://srombauts.github.io/UE4GitPlugin/) also exists, although I'm not too familiar with it.
 
-I will be focusing on Perforce as I find that most game development houses use it, including Epic, and although it has the disadvantage of requiring a server, Perforce supports up to 20 users/workspaces for free now and does a much much better job at handling binary files than both Git and Subversion; better binary file handling meaning less server space required for revision histories.
+I will be focusing on Perforce as I find that most game development houses use it, including Epic, and although it has the disadvantage of requiring a server, Perforce supports up to 20 users/workspaces free now and does a much better job at handling binary files than both Git and Subversion; better binary file handling meaning less server space required for revision histories.
 
 This setup is more geared to those who [build UE4 from source code](/2014/09/25/Build-Source/) but is also applicable for those who just want to host project files.
 
@@ -15,7 +15,7 @@ This setup is more geared to those who [build UE4 from source code](/2014/09/25/
 
 ## Perforce Hosting
 
-Perforce is a centralized version control system, meaning it requires a server to be hosted on. You could run it locally and it is rather straightforward to set up, but I will be focusing on a more "proper" solution by setting up the Perforce host on a seperate [Ubuntu](http://www.ubuntu.com/) machine. If you plan to work with others remotely, I highly suggest renting a cloud server to put Perforce on so you don't have to worry about hardware maintenance, uptime, or bandwidth. There are a lot of server hosting solutions available, but for small projects, [I highly recommend DigitalOcean](https://www.digitalocean.com/?refcode=070b959bc226).
+Perforce is a centralized version control system, meaning it requires a server to be hosted on. You could run it locally and it is rather straightforward to set up, but I will be focusing on a more "proper" solution by setting up the Perforce host on a separate [Ubuntu](http://www.ubuntu.com/) machine. If you plan to work with others remotely, I highly suggest renting a cloud server to put Perforce on so you don't have to worry about hardware maintenance, uptime, or bandwidth. There are a lot of server hosting solutions available, but for small projects, [I highly recommend DigitalOcean](https://www.digitalocean.com/?refcode=070b959bc226).
 
 Running a lightweight Perforce server using [DigitalOcean](https://www.digitalocean.com/?refcode=070b959bc226) will cost you $20 a month, ($10 a month if you know your project will be quite small) but if you are serious about development it will save you countless hours and cash when you inevitably break your project and need to revert some changes, or if you are working with someone else remotely.
 
@@ -23,14 +23,14 @@ If you do end up using [DigitalOcean](https://www.digitalocean.com/?refcode=070b
 
 ## Creating a DigitalOcean Droplet
 
-I will be writing how to set up a DigitalOcean Droplet, which is their term for a cloud instance, however this isn't absolutely required. I will be writing about how to set this up on a 64-bit Ubuntu/Linux system, so if you already have a Linux server up and running please skip this section. If you are installing a Perforce server on a Windows machine, using the server installer it is pretty straightforward and theres really nothing to write about.
+I will be writing how to set up a DigitalOcean Droplet, which is their term for a cloud instance, however this isn't absolutely required. I will be writing about how to set this up on a 64-bit Ubuntu/Linux system, so if you already have a Linux server up and running please skip this section. If you are installing a Perforce server on a Windows machine, using the server installer it is pretty straightforward and there's really nothing to write about.
 
 1. [Create a DigitalOcean account](https://www.digitalocean.com/?refcode=070b959bc226) by clicking Sign Up on the top right of [this page](https://www.digitalocean.com/?refcode=070b959bc226).
 2. Confirm your account with the email that DigitalOcean will send you.
 3. Enter your credit card information or provide a payment upfront using PayPal. If using PayPal, I recommend a payment of $20 to get started.
 4. Now you will need to create a droplet using the following settings.
     - Hostname should be ideally be short
-    - I recommend the $20/month tier as it has enough space and bandwidth to last for awhile for a small project and provides you with enough ram and cpu to run other server tasks such as issue tracking or a [continuous integration](http://en.wikipedia.org/wiki/Continuous_integration) system like [Jenkins](http://jenkins-ci.org/) if you choose to in the future. You could get away with the $10/month tier though.
+    - I recommend the $20/month tier as it has enough space and bandwidth to last for a while for a small project and provides you with enough ram and cpu to run other server tasks such as issue tracking or a [continuous integration](http://en.wikipedia.org/wiki/Continuous_integration) system like [Jenkins](http://jenkins-ci.org/) if you choose to in the future. You could get away with the $10/month tier though.
     - Select the region closest to you for lower latency.
     - You do not need any of the "Available Settings" unless you are interested in any of them.
 
@@ -39,7 +39,7 @@ I will be writing how to set up a DigitalOcean Droplet, which is their term for 
 
 ## Accessing your DigitalOcean Droplet
 
-After you create your droplet, you will recieve an email containing its ip address and credentials. You will need this to log in.
+After you create your droplet, you will receive an email containing its IP address and credentials. You will need this to log in.
 
 > ![DigitalOcean Root Email](/assets/DigitalOcean_RootEmail.PNG)
 
@@ -50,9 +50,9 @@ To access your DigitalOcean droplet you will need to [SSH](http://en.wikipedia.o
 3. A shell will appear with the prompt `login as:`. Type in `root` and hit Enter.
 4. Type in your password given to you in the droplet email.
 
-    > When you type in your password, no characters will appear, but rest assured your input is being sent. A shortcut you can use is if you put your password in your clipboard, you can right click once to paste in the shell terminal and then hit enter.
+    > When you type in your password, no characters will appear, but rest assured your input is being sent. A shortcut you can use is if you put your password in your clipboard, you can right-click once to paste in the shell terminal and then hit enter.
 
-5. You will be forced to change your root password. Enter your root password again, then enter a new password twice to change it. **Be sure to remember this password.**
+5. DigitalOcrean makes it required to change your root password after your initial login. Enter your root password again, then enter a new password twice to change it. **Be sure to remember this password.**
 6. If you end up at a prompt of `root@yourhostname:~#` or something very similar, you are now logged in.
 
 ![PuTTY Configuration](/assets/DigitalOcean_Putty.PNG)
@@ -64,30 +64,30 @@ There are a lot of steps here that can be customized depending on your needs, bu
 
 ### Downloading Server Binary
 
-The first step is to download Perforce Server. To find the latest version of Perforce, you can view all versions of Perforce [here](ftp://ftp.perforce.com/perforce/). As of this writing on September 25, 2014, the latest Linux 64-bit version is `r14.1/bin.linux26x86_64` with download url `ftp://ftp.perforce.com/perforce/r14.1/bin.linux26x86_64/p4d`. To download this on the server, we can use the shell command `wget` to... get it.
+The first step is to download Perforce Server. To find the latest version of Perforce, you can view all versions of Perforce [here](ftp://ftp.perforce.com/perforce/). As of this writing on September 25, 2014, the latest Linux 64-bit version is `r14.1/bin.linux26x86_64` with download URL `ftp://ftp.perforce.com/perforce/r14.1/bin.linux26x86_64/p4d`. To download this on the server, we can use the shell command `wget` to... get it.
 
         wget ftp://ftp.perforce.com/perforce/r14.1/bin.linux26x86_64/p4d
-        
+    
 Enter the command above and your server should download the file directly.
 
 ![PuTTY P4D Download](/assets/DigitalOcean_P4DDownload.PNG)
 
 ### Prepping Server Binary
 
-Linux shells usually require you to set an executable flag on downloaded files if you want to run them. Ubuntu and Perforce are no exception. To make the file executable, use:
+Linux shells usually require an executable flag set on downloaded files if you want to run them. Ubuntu and Perforce are no exception. To make the file executable, use:
 
         chmod +x p4d
-        
+    
 Once the `p4d` server binary is executable, lets move it to `/usr/local/bin`
 
         sudo mv p4d /usr/local/bin
-        
+    
 ### Setting Up Basic Permissions Security
 
 It is __highly not recommended that you run your Perforce server as `root`__. `root` has far too much power and if someone were to run bad things through your Perforce server (which is highly unlikely), it should be isolated in terms of what it can do on the system. To do this we are going to add a new user.
 
         sudo adduser perforce
-        
+    
 This will prompt you to create a password and enter some details about the new user. These details are not too important and I just set the user's full name to Perforce.
 
 ![PuTTY Add Perforce User](/assets/DigitalOcean_AddPerforceUser.PNG)
@@ -100,42 +100,42 @@ Now we need to create the directories that will house our Perforce server databa
         sudo chown perforce /perforce_depot
         sudo mkdir /var/log/perforce
         sudo chown perforce /var/log/perforce
-        
+    
 ### Installing Daemon
 
-`daemon` is a linux tool that turns a program into a daemon. A daemon is a background task that runs behind everything and isn't directly interactable. This is important as we want our Perforce server to always be running in the background, otherwise if you start the server in your PuTTY shell, as soon as you quit your shell your Perforce server would also shut down. To install `daemon`, use the following command:
+`daemon` is a Linux tool that turns a program into a daemon. A daemon is a background task that runs behind everything and isn't directly interactable. This is important as we want our Perforce server to always be running in the background, otherwise if you start the server in your PuTTY shell, as soon as you quit your shell your Perforce server would also shut down. To install `daemon`, use the following command:
 
         sudo apt-get install daemon
-        
+    
 ### Setting Up Perforce As A Boot Daemon
 
-We don't want to keep manually starting our Perforce server every time the DigitalOcean server goes down, even if the server will generally never crash or hang. If we need to restart the server for any reason, setting up Perforce as a boot daemon will ensure it will always be running. First we need to go to the directory that contains a bunch of system initialization controls.
+We don't want to keep manually starting our Perforce server every time the DigitalOcean server goes down, even if the server will generally never crash or hang. If we need to restart the server for any reason, setting up Perforce as a boot daemon will make sure it will always be running. First we need to go to the directory that has a bunch of system initialization controls.
 
         cd /etc/init.d
-        
-Now we need a control script for our `perforce` user. I've been using [this script](/assets/shell_scripts/perforce) for awhile without any issue. I'm not exactly sure who the original author of it was. Here is the script in full for reference in case the script file somehow disappears off host. If [this link to download this script](/assets/shell_scripts/perforce) is working, you will not have to type this up and instead can download this script directly to your `/etc/init.d` directory directly with the following command:
+    
+Now we need a startup script for root which will launch a `p4d` daemon under the user `perforce`. I've used [this script](/assets/shell_scripts/root) for a while without any issue. I'm not exactly sure who the original author of it was. Here is the script in full for reference for whene the script file somehow disappears off host. If [this link to download this script](/assets/shell_scripts/root) is working, you will not have to type this up and instead can download this script directly to your `/etc/init.d` directory directly with the following command:
 
-        wget http://allarsblog.com/assets/shell_scripts/perforce
-        
-Full script for reference, which if you have to create manually, should be saved as `/etc/init.d/perforce`
+        wget http://allarsblog.com/assets/shell_scripts/root
+    
+Full script for reference, which if you have to create manually, should be saved as `/etc/init.d/root`
 
 ```shell
-#!/bin/sh -e
+#!/bin/sh
 
-  export P4JOURNAL=/var/log/perforce/journal
-  export P4LOG=/var/log/perforce/p4err
-  export P4ROOT=/perforce_depot
-  export P4PORT=1666
+export P4JOURNAL=/var/log/perforce/journal
+export P4LOG=/var/log/perforce/p4err
+export P4ROOT=/perforce_depot
+export P4PORT=1666
 
-  PATH="/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin"
+PATH="/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin"
 
-  . /lib/lsb/init-functions
+. /lib/lsb/init-functions
 
-  p4start="p4d -d"
-  p4stop="p4 admin stop"
-  p4user=perforce
+p4start="p4d -d"
+p4stop="p4 admin stop"
+p4user=perforce
 
-  case "$1" in
+case "$1" in
   start)
     log_action_begin_msg "Starting Perforce Server"
     daemon -u $p4user -- $p4start;
@@ -151,10 +151,10 @@ Full script for reference, which if you have to create manually, should be saved
     start
     ;;
 
-  *)
-    echo "Usage: /etc/init.d/perforce (start|stop|restart)
-    exit 1
-    ;;
+*)
+  echo "Usage: /etc/init.d/perforce (start|stop|restart)"
+  exit 1
+  ;;
 
 esac
 
@@ -163,21 +163,34 @@ exit 0
 
 Once you have the script saved, we need to update Ubuntu's boot process with it using the command:
 
-        sudo update-rc.d perforce defaults
-        
+        sudo update-rc.d root defaults
+    
 ### Starting Up Perforce Server For The First Time
 
 If everything is set up correctly, restarting the DigitalOcean droplet should boot the perforce server. To restart the server:
 
         sudo reboot
-        
+    
+PuTTY should close saying the connection has lost and your shell should become inactive. You should close it now.
 
-        
+## Connecting To Your Perforce Server
 
+If everything went alright, your Perforce server should now be running. The easiest way to make sure its running is to connect to it from your workstation. To connect to your Perforce Server, you are going to need the Perforce Visual Client (P4V). You can download the client from the [Perforce Downloads Page](http://www.perforce.com/downloads/Perforce/20-User). Make sure you scroll down and are downloading the P4V: Visual Client. Go ahead and install the client with default settings. If you are prompted that the server `localhost:1666` does not exist, go ahead and press on. At some point you will be asked if you would like to run the `Connection Setup Wizard`. __Hit No__. If you hit yes, that's okay, but hitting No is faster. Just make sure that the following settings are correct, whether you are using the wizard or the Open Connection window.
 
+__Replace the IP address I am using with your DigitalOcean droplet's IP address__
 
+        Server hostname: 104.131.143.4:1666
 
+If using the Wizard, click Next and create a new user. If using the Open Connection box, click "New..." next to the User input box, and fill out your user details. I usually recommend your last name capitalized as your username if you are working with a team.
 
+![Perforce New User](/assets/DigitalOcean_PerforceNewUser.PNG)
 
+If using the wizard, click next, if using the Open Connection Dialog, click "New..." next to the Workspace input box. Your workspace name can be anything you want, however if working on a team I highly recommend Lastname\_Location, i.e. Allar\_Home. Your location should match the root of your UE4 build or your UE4 project, depending on what you want on your Perforce server. If you are going to use a built UE4 from GitHub, its best if you have your projects you are working on along with your engine files, as laid out in [my post about building UE4 from source code](/2014/09/25/Build-Source).
 
+![Perforce New Workspace](/assets/DigitalOcean_PerforceNewWorkspace.PNG)
 
+If you are using the Wizard, on the next page **be sure to select "No, I will copy files to my workspace later"**. If you are using the Open Connection dialog, you may be asked if you want to choose a different location as the folder already exists. **Hit No** and then hit OK. If you are then prompted with an Add Files Wizard, **hit Cancel**.
+
+---
+
+This post has gotten pretty long, so I will separate the next part into a post of its own. The next section will be about which files to add to your Perforce server when using UE4 either built from source code or if you are just uploading your project files only.
