@@ -191,6 +191,30 @@ If using the wizard, click next, if using the Open Connection Dialog, click "New
 
 If you are using the Wizard, on the next page **be sure to select "No, I will copy files to my workspace later"**. If you are using the Open Connection dialog, you may be asked if you want to choose a different location as the folder already exists. **Hit No** and then hit OK. If you are then prompted with an Add Files Wizard, **hit Cancel**.
 
+## Last Perforce Security Settings
+
+### Ensuring Environment Settings Are Set
+
+After creating this first user you should disable the ability for anyone to create a new user for your server. As you are the first user on your Perforce server, you have automatically been granted `super` user rights giving you full control over the server. As a `super` user, you can run most administrative commands without using PuTTY and through Perforce directly. To issuie Perforce commands from your workstation, you first need to ensure your environment settings are set. The easiest way to set them is by using the client ui and navigating to the Connection menu at the top, then clicking on Environment Settings... Be sure that "Use current connection for environment settings" is checked and hit OK. After that, you can then use command-prompt/terminal to issue P4 commands to the server your client is connected to.
+
+![Perforce Environment Settings](/assets/DigitalOcean_EnvironmentSettings.PNG)
+
+### Disabling User Creation
+
+To disable user creation to everyone but yourself, open up Windows command prompt and navigate to your Perforce workspace directory. The easiest way to do it in Windows is to hold down shift and right-click in a folder view of your workspace, then choose Open Command Prompt Here.
+
+![Perforce Open Command Prompt](/assets/DigitalOcean_OpenCommandPrompt.png)
+
+Once your command prompt or terminal is open, run the command:
+
+        p4 configure set dm.user.noautocreate=2
+    
+You should then be prompted with:
+
+```
+F:\depot>p4 configure set dm.user.noautocreate=2
+For server 'any', configuration variable 'dm.user.noautocreate' set to '2'
+```
 ---
 
 This post has gotten pretty long, so I will separate the next part into a post of its own. The next section will be about which files to add to your Perforce server when using UE4 either built from source code or if you are just uploading your project files only.
