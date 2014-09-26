@@ -43,7 +43,7 @@ After you create your droplet, you will recieve an email containing its ip addre
 
 > ![DigitalOcean Root Email](/assets/DigitalOcean_RootEmail.PNG)
 
-To access your DigitalOcrean droplet you will need to [SSH](http://en.wikipedia.org/wiki/Secure_Shell) into it. Basically, this is a way to remote control a server but instead of seeing any form of user interface you can only interact with its shell/terminal/command prompt. The easiest way to do this is to download a program named [PuTTY](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html). On the downloads page, all you need is `putty.exe`. If you are on OS X, [use this instead](http://kb.mediatemple.net/questions/1599).
+To access your DigitalOcean droplet you will need to [SSH](http://en.wikipedia.org/wiki/Secure_Shell) into it. Basically, this is a way to remote control a server but instead of seeing any form of user interface you can only interact with its shell/terminal/command prompt. The easiest way to do this is to download a program named [PuTTY](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html). On the downloads page, all you need is `putty.exe`. If you are on OS X, [use this instead](http://kb.mediatemple.net/questions/1599).
 
 1. Once you load PuTTY, enter your droplet's IP address in the Host Name box and click Open.
 2. A PuTTY Security Alert will pop up asking if you trust the host. Hit Yes.
@@ -101,9 +101,15 @@ Now we need to create the directories that will house our Perforce server databa
         sudo mkdir /var/log/perforce
         sudo chown perforce /var/log/perforce
         
+### Installing Daemon
+
+`daemon` is a linux tool that turns a program into a daemon. A daemon is a background task that runs behind everything and isn't directly interactable. This is important as we want our Perforce server to always be running in the background, otherwise if you start the server in your PuTTY shell, as soon as you quit your shell your Perforce server would also shut down. To install `daemon`, use the following command:
+
+        sudo apt-get install daemon
+        
 ### Setting Up Perforce As A Boot Daemon
 
-We don't want to keep manually starting our Perforce server every time the DigialOcean server goes down, even if the server will generally never crash or hang. If we need to restart the server for any reason, setting up Perforce as a boot daemon will ensure it will always be running. First we need to go to the directory that contains a bunch of system initialization controls.
+We don't want to keep manually starting our Perforce server every time the DigitalOcean server goes down, even if the server will generally never crash or hang. If we need to restart the server for any reason, setting up Perforce as a boot daemon will ensure it will always be running. First we need to go to the directory that contains a bunch of system initialization controls.
 
         cd /etc/init.d
         
@@ -154,13 +160,21 @@ esac
 
 exit 0
 ```
+
+Once you have the script saved, we need to update Ubuntu's boot process with it using the command:
+
+        sudo update-rc.d perforce defaults
+        
+### Starting Up Perforce Server For The First Time
+
+If everything is set up correctly, restarting the DigitalOcean droplet should boot the perforce server. To restart the server:
+
+        sudo reboot
         
 
-### Installing Daemon
+        
 
-`daemon` is a linux tool that turns a program into a daemon. A daemon is a background task that runs behind everything and isn't directly interactable. This is important as we want our Perforce server to always be running in the background, otherwise if you start the server in your PuTTY shell, as soon as you quit your shell your Perforce server would also shut down. To install `daemon`, use the following command:
 
-        sudo apt-get daemon
 
 
 
