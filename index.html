@@ -17,6 +17,8 @@ title: Home
     {% if post.content contains '<!--more-->' %}
     
       {{ post.content | split:'<!--more-->' | first }}
+      
+      <a href="{{ post.url }}#disqus_thread">Link</a>
     
       <h2>
         <a href="{{ post.url }}">Read This Full Blog Post...</a>
