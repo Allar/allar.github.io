@@ -7,7 +7,11 @@ A common question with [Unreal Engine 4 (UE4)](http://www.unrealengine.com) is "
 
 This is the first part of a two part post. This part will complete the setting up of the Perforce server but won't put your files on said server.
 
-<!--more-->
+# Video Version
+
+At ten minutes, this video will walk you through the process if you're completely unfamiliar with everything. If you know what a linux shell is, I highly recommend the condensed version down below.
+
+<iframe width="720" height="480" src="//www.youtube.com/embed/5krob9SlVu4" frameborder="0" allowfullscreen></iframe>
 
 # Condensed Version
 
@@ -26,6 +30,10 @@ sudo ./install-perforce
 You will be asked to create a password and user details for a new user named `perforce`. Afterwards, the server will restart and you should then be able to connect to your Perforce server.
 
 I highly recommend disabling user creation privleges, [which you can read about here](#security_settings).
+
+If you want more specific details about the process, the really long version is down below which does all the setup manually.
+
+<!--more-->
 
 # Long Version
 
