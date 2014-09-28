@@ -5,7 +5,7 @@ title: "Setting up version control (Perforce) for Unreal Engine 4 using DigitalO
 
 A common question with [Unreal Engine 4 (UE4)](http://www.unrealengine.com) is "how do you set up version control?" I think this is a very important question and if you have never used version control for your projects you are crippling yourself from the start. I won't go into details about [why you should use version control](http://gameindustry.about.com/od/game-development/a/The-Importance-Of-Version-Control-Management-In-Game-Development.htm) or [how to use version control](http://betterexplained.com/articles/a-visual-guide-to-version-control/). I will be just covering how to get a basic setup going.
 
-This is the first part of a two part post. This part will complete the setting up of the Perforce server but won't put your files on said server.
+This is the first part of a two part post. This part will complete the setting up of the Perforce server but won't put your files on said server. [For part 2](/2014/09/27/Setup-Perforce-Digital-Part2), dealing with uploading files to the Perforce and setting workspace flags, [click here](/2014/09/27/Setup-Perforce-Digital-Part2).
 
 # Video Version
 
@@ -205,4 +205,4 @@ For server 'any', configuration variable 'dm.user.noautocreate' set to '2'
 ```
 ---
 
-This post has gotten pretty long, so I will separate the next part into a post of its own. The next section will be about which files to add to your Perforce server when using UE4 either built from source code or if you are just uploading your project files only.
+This post has gotten pretty long, so I will separate the next part into a post of its own. [The next section will be about which files to add to your Perforce server when using UE4 either built from source code or if you are just uploading your project files only](/2014/09/27/Setup-Perforce-Digital-Part2).
