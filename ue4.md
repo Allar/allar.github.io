@@ -16,3 +16,4 @@ Date | Post
 Date | Post
 --- | ---
 09/28/2014 | [Military Character Dark $20.00](/2014/09/28/UE4Marketplace-MilCharDark)
+10/02/2014 | [Rin's Blueprint Dice Pack $15.00](/2014/10/02/UE4Marketplace-RinDice)
