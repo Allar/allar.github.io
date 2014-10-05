@@ -87,6 +87,9 @@ html {
 .sidebar-nav {
   padding-left: 0;
   list-style: none;
+  top: 0;
+  position: fixed;
+  padding-top: 32px;
 }
 .sidebar-nav-item {
   display: block;
