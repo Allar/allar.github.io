@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: post
 title: Just A Thought: LaTeX for Kids
 ---
 
