@@ -25,3 +25,4 @@ Date | Post
 Date | Post
 --- | ---
 10/05/2014 | [UE4.4.3 Pre-existing Blueprints Don't Reflect HideCategories Changes](/2014/10/05/UE44-BP-HideCategories)
+10/19/2014 | [UE4 4.5 UMG Workaround: UI loses focus when clicking on no widget](/2014/10/19/UMGMenuLoseFocus)
