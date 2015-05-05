@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "The Announcement of Alone in the Dark: Illumination"
+tags: [Allar, Pure FPS, aitd, PAX, Nvidia]
 ---
 
 [![Alone in the Dark: Illumination, Cemetary](/assets/aitd_cemetary_720.jpg)](/assets/aitd_cemetary.jpg)

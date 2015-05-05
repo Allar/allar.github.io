@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "UE4 Marketplace Review: Military Character Dark"
+tags: [Allar, ue4, marketplace, review]
 ---
 
 ## Video Review

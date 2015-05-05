@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "UE4 Marketplace Review: Rin Blueprint Dice Pack"
+tags: [Allar, ue4, marketplace, review]
 ---
 
 ## Video Review

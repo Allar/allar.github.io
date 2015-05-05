@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Setting up version control (Perforce) for Unreal Engine 4 using DigitalOcean and Ubuntu (Part 2)"
+tags: [Allar, perforce, source control, ue4, tutorial, Digital Ocean, Ubuntu]
 ---
 
 # Video Version

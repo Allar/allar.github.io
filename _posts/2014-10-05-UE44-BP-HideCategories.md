@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "UE4.4.3 Pre-existing Blueprints Don't Reflect HideCategories Changes"
+tags: [Allar, ue4, bugs, blueprint, workarounds]
 ---
 
 Relevant to Unreal Engine 4 version 4.4.3.

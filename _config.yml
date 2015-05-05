@@ -1,35 +1,69 @@
-# Dependencies
-markdown:         redcarpet
-redcarpet:
-  extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "tables", "with_toc_data"]
-highlighter:         true
+title:            Allar's Awesome Blog
+description:      About Unreal Engine 4 Game Development and Other Things™
+disqus_shortname: allarsblog
+reading_time:     true
+words_per_minute: 175
+# Your site's domain goes here (eg: //mmistakes.github.io, http://mademistakes.com, etc)
+# When testing locally leave blank or use http://localhost:4000
+url:  http://allarsblog.com
 
-# Permalinks
-permalink:        pretty
+# Owner/author information
+owner:
+  name:           Michael Allar
+  avatar:         avatar.jpg
+  bio:            "Professional game developer working with Unreal Engine 3 and 4 located in the Los Angeles area."
+  email:          allar@michaelallar.com
+  # Social networking links used in footer. Update and remove as you like.
+  twitter:        michaelallar
+  #facebook:       awesomeallar
+  github:         allar
+  #stackexchange:  
+  linkedin:       allar
+  #instagram:      
+  #flickr:         
+  #tumblr:         
+  # google plus id, include the '+', eg +mmistakes
+  #google_plus:    +yourid
 
-# Setup
-title:            Allar
-tagline:          'A Jekyll theme'
-description:      "<a href=\"https://twitter.com/michaelallar\" target=\"_blank\">@michaelallar</a>'s random, generally technical, writings about the development of things."
-url:              http://allarsblog.com
+# Background image to be tiled on all pages
+background: 
 
-author:
-  name:           'Michael Allar'
-  url:            https://twitter.com/michaelallar
+# Analytics and webmaster tools stuff goes here
+google_analytics: UA-55007129-1
+google_verify:  6MIC1dP3EPSEtoKAnJayxa8Tcnfo065FIzE928vMWa4
+# https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
+bing_verify:         
 
-paginate:         5
-
-# Custom vars
-version:          2.0.0
-
-defaults:
-  -
-    scope:
-      path: "" # an empty string here means all files in the project
-      type: "posts" # previously `post` in Jekyll 2.2.
-    values:
-      disqusidentifier: home_change_me
-      comments: true
-      
+# http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone:    America/Los_Angeles
+future:      true
+highlighter: pygments
+markdown:    kramdown
 gems:
   - jekyll-sitemap
+sass:
+  sass_dir: _sass
+  style: compressed
+
+# https://github.com/mojombo/jekyll/wiki/Permalinks
+permalink:   /:categories/:title/
+
+# Amount of post to show on home page
+paginate: 5
+
+kramdown:
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  use_coderay: true
+
+  coderay:
+    coderay_line_numbers: nil
+    coderay_line_numbers_start: 1
+    coderay_tab_width: 4
+    coderay_bold_every: 10
+    coderay_css: class
+
+include: [".htaccess"]
+exclude: ["lib", "config.rb", "Capfile", "config", "Gemfile", "Gemfile.lock", "README.md", "LICENSE", "log", "Rakefile", "Rakefile.rb", "tmp", "less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules"]
