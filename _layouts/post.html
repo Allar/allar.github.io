@@ -9,6 +9,8 @@
 
 <body id="post" {% if page.image.feature %}class="feature"{% endif %}>
 
+{% include scripts.html %}   
+
 {% include browser-upgrade.html %}
 {% include navigation.html %}
 
@@ -60,7 +62,7 @@
   </footer>
 </div><!-- /.footer-wrapper -->
 
-{% include scripts.html %}	        
+{% if page.comments != false %}{% include disqus_comments.html %}{% endif %}        
 
 </body>
 </html>

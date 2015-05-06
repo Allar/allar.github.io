@@ -9,6 +9,8 @@
 
 <body id="post-index" {% if page.image.feature %}class="feature"{% endif %}>
 
+{% include scripts.html %}   
+
 {% include browser-upgrade.html %}
 {% include navigation.html %}
 
@@ -27,8 +29,28 @@
   </div><!-- /.header-title -->
 </div><!-- /.entry-header -->
 
+{% include portfolio.html %}
+
+<div class="seperator-header">
+  <div class="entry-image">
+    <img src="{{ site.url }}/images/ps_neutral.png">
+  </div>
+  <div class="header-title">
+    <div class="header-title-wrap">
+      <i class="clock fa fa-clock-o fa-3x"></i>
+      <h1>Latest</h1>
+    </div><!-- /.header-title-wrap -->
+  </div><!-- /.header-title -->
+</div>
+
+<div class="recents">
+  {% include latest-blog-posts.html %}
+  {% include latest-tweets.html %}
+  {% include latest-tutorials.html %}
+  {% include latest-videos.html %}  
+</div>
+
 <div id="main" role="main">
-  {{ content }}
 </div><!-- /#main -->
 
 <div class="footer-wrapper">
@@ -37,7 +59,7 @@
   </footer>
 </div><!-- /.footer-wrapper -->
 
-{% include scripts.html %}          
+       
 
 </body>
 </html>

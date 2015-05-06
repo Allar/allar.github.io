@@ -1,0 +1,21 @@
+<div class="seperator-header">
+	<div class="entry-image">
+		<img src="{{ site.url }}/images/ps_neutral.png">
+	</div>
+	<div class="header-title">
+	    <div class="header-title-wrap">
+	      <i class="star fa fa-star fa-3x"></i>
+	      <h1>Portfolio</h1>
+	    </div><!-- /.header-title-wrap -->
+	</div><!-- /.header-title -->
+</div>
+
+<div class="mainmock portfolio">
+	<article class="hentry">
+		<div class="entry-content">
+		    {% for post in site.categories.portfolio %}
+				{{ post.title }}
+			{% endfor %}
+  		</div>
+	</article>
+</div>

@@ -1,0 +1,24 @@
+<article class="hentry">
+  <div class="latest-tutorials">
+    <div class="recents-header">
+      <div class="entry-image">
+        <img src="{{ site.url }}/images/abstract-7.jpg">
+      </div>
+      <div class="header-title">
+        <div class="header-title-wrap">
+          <i class="icon fa fa-pencil fa-2x"></i>
+          <h1>Latest Tutorials</h1>
+        </div><!-- /.header-title-wrap -->
+      </div><!-- /.header-title -->
+    </div>
+    <ul class="fa-ul">
+      {% for post in site.tags.tutorial limit:15 %}
+        {% if post.link %}
+            <li><i class="fa-li fa fa-link"></i><a href="{{ site.url }}{{ post.url }}" class="permalink" rel="bookmark" title="{{ post.title }}"><i class="fa fa-bookmark"></i></a> <a href="{{ post.link }}">{{ post.title }}</a></li>
+        {% else %}
+            <li><i class="fa-li fa fa-square"></i><a href="{{ site.url }}{{ post.url }}" rel="bookmark" title="{{ post.title }}" itemprop="url">{{ post.title }}</a></li>
+        {% endif %} 
+      {% endfor %}
+    </ul>
+  </div>
+</article>

@@ -349,7 +349,8 @@ header .entry-meta {
 // Post Index 
 // --------------------------------------------------
 #post-index {
-	#main {
+	#main,
+	.mainmock {
 		margin: 40px 2px 20px 2px;
 		@media #{$medium} {
 			margin-left: 20px;
@@ -461,4 +462,174 @@ header .entry-meta {
 }
 #goog-wm-sb {
 	@extend .btn;
+}
+
+// Seperators
+// --------------------------------------------------
+.seperator-header {
+	width: 100%;
+	overflow: hidden;
+	position: relative;
+
+	.entry-image {
+		min-height: 150px;
+	}
+
+	.star {
+		color: #ff0;
+		text-shadow: 1px 1px 1px #444;
+	}
+
+	.clock {
+		color: #ff0;
+		text-shadow: 1px 1px 1px #444;
+	}
+
+	.header-title {
+		h1 {
+			@include font-rem(24);
+			text-transform: uppercase;
+			@media #{$medium} {
+				@include font-rem(36);
+			}
+		}
+		height: 150px;
+	}
+}
+
+// Portfolio
+// --------------------------------------------------
+
+
+// Recents
+// --------------------------------------------------
+
+.recents-header {
+	width: 100%;
+	overflow: hidden;
+	position: relative;
+
+	.entry-image {
+		min-height: 75px;
+	}
+
+	.icon {
+		color: #fff;
+		text-shadow: 1px 1px 1px #444;
+		display: inline;
+	}
+
+	.twitter {
+		color: #55ACEE;
+	}
+
+	.header-title {
+		h1 {
+			display: inline;
+			margin: 20px;
+			@include font-rem(18);
+			text-transform: uppercase;
+			@media #{$medium} {
+				@include font-rem(24);
+			}
+		}
+		height: 75px;
+	}
+}
+
+.portfolio {
+	
+	text-align: center;
+}
+
+.recents {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: stretch;
+
+	margin: 40px 2px 20px 2px;
+	@media #{$medium} {
+		margin-left: 20px;
+		margin-right: 20px;
+	}
+	@media #{$large} {
+		max-width: 800px;
+		margin-top: 50px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	@media #{$x-large} {
+		max-width: 1600px;
+		margin-top: 50px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	article {
+		flex-grow: 1;
+		background-color: $white;
+		box-shadow: 0 0 0 0, 0 6px 12px rgba($base-color,0.1);
+		@include rounded(3px);
+		margin-bottom: 20px;
+		padding: 0 !important;	
+		@media #{$medium} {
+			padding: 30px;
+		}
+		@media #{$large} {
+			max-width: 380px;
+			margin-bottom: 30px;
+			padding: 50px 80px;
+		}
+	}
+
+	article.hentry {
+		
+	}
+
+	.header-title {
+		h1 {
+			@include font-rem(18);
+			text-transform: uppercase;
+			@media #{$medium} {
+				@include font-rem(24);
+				line-height: 32px;
+			}
+			vertical-align: text-bottom;
+		}
+	}
+}
+
+.latest-blog,
+.latest-tutorials {
+	ul {
+		margin-left: 3em;
+		margin-right: 1.5em;
+	}
+}
+
+.latest-videos {
+	ul {
+		margin-left: 1.5em;
+		margin-right: 1.5em;
+	}
+	li {
+		@include clearfix();
+		img {
+			float: left;
+			margin-right: 1em;
+		}
+		margin-bottom: 24px;
+	}
+}
+
+.twitter-timeline {
+	height: 600px;
+	width: auto;
+}
+
+#twitter-widget-0 {
+	width: 100% !important;
 }
