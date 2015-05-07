@@ -674,3 +674,46 @@ header .entry-meta {
 #twitter-widget-0 {
 	width: 100% !important;
 }
+
+.clients {
+	background-color: white;
+	box-shadow: 0 0 0 0, 0 6px 12px rgba(34, 34, 34, 0.1);
+	text-align: center;
+
+
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: stretch;
+	align-content: center;
+
+	@media #{$medium} {
+		margin-left: 10px;
+		margin-right: 10px;
+		padding: 20px 30px;
+	}
+	@media #{$large} {
+		max-width: 800px;
+		margin: 50px auto 30px auto;
+		padding: 50px 80px;
+	}
+	@media #{$x-large} {
+		max-width: 1600px;
+		margin: 50px auto 30px auto;
+		padding: 50px 80px;
+	}
+
+	a {
+		max-height: 120px;
+		line-height: 120px;
+		margin: 1.5em;
+
+		img {
+			vertical-align: center;
+			
+		}
+	}
+
+	
+}
