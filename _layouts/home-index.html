@@ -9,6 +9,8 @@
 
 <body id="post-index" {% if page.image.feature %}class="feature"{% endif %}>
 
+{% include scripts.html %}   
+
 {% include browser-upgrade.html %}
 {% include navigation.html %}
 
@@ -22,15 +24,20 @@
   <div class="header-title">
     <div class="header-title-wrap">
       <h1>{{ site.title }}</h1>
-      <h2>{{ page.title }}</h2>
+      <h2>{{ site.description }}</h2>
     </div><!-- /.header-title-wrap -->
   </div><!-- /.header-title -->
 </div><!-- /.entry-header -->
 
 {% include navbar.html %}
 
+{% include portfolio.html %}
+
+{% include recents.html %}
+
+{% include worked-with.html %}
+
 <div id="main" role="main">
-  {{ content }}
 </div><!-- /#main -->
 
 <div class="footer-wrapper">
@@ -39,7 +46,7 @@
   </footer>
 </div><!-- /.footer-wrapper -->
 
-{% include scripts.html %}          
+       
 
 </body>
 </html>
