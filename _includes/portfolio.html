@@ -12,10 +12,13 @@
 
 <div class="mainmock portfolio">
 	<article class="hentry">
-		<div class="entry-content">
-		    {% for post in site.categories.portfolio %}
-				{{ post.title }}
-			{% endfor %}
-  		</div>
+	    {% for post in site.categories.portfolio %}
+	    	<div class="entry-content">
+	    		<div class="port-wrapper">
+					<a class="portlink" href="{{ post.portlink }}"><img src="{{ post.portimage }}"><div class="title">{{ post.title }}</div></a>
+				</div>
+			</div>
+		{% endfor %}
+  		
 	</article>
 </div>
