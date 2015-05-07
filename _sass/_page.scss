@@ -717,3 +717,49 @@ header .entry-meta {
 
 	
 }
+
+.navbar {
+	background-color: white;
+
+	@include font-rem(24);
+	height: 3em;
+	line-height: 3em;
+
+	ul {
+		height: 100%;
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: stretch;
+		align-content: center;
+
+		margin: 0;
+		margin-left: auto;
+		margin-right: auto;
+
+		@media #{$large} {
+			max-width: 800px;
+		}
+		@media #{$x-large} {
+			max-width: 800px;
+		}
+
+		li {
+			list-style: none;
+			display: inline-block;
+			flex-grow: 1;
+			height: 100%;
+			&:hover {
+				background-color: #aaa;
+			}
+
+			text-align: center;
+			cursor: pointer;
+		}
+
+		.active {
+			font-weight: bold;
+		}
+	}
+}

@@ -1,0 +1,13 @@
+# Menu navigation links
+
+- title: Home
+  url: index.html
+
+- title: Blog
+  url: index.html
+
+- title: Tutorials
+  url: index.html
+
+#- title: Portfolio
+#  url: index.html

@@ -1,0 +1,18 @@
+<div class="seperator-header">
+  <div class="entry-image">
+    <img src="{{ site.url }}/images/ps_neutral.png">
+  </div>
+  <div class="header-title">
+    <div class="header-title-wrap">
+      <i class="clock fa fa-clock-o fa-3x"></i>
+      <h1>Latest</h1>
+    </div><!-- /.header-title-wrap -->
+  </div><!-- /.header-title -->
+</div>
+
+<div class="recents">
+  {% include latest-blog-posts.html %}
+  {% include latest-tweets.html %}
+  {% include latest-tutorials.html %}
+  {% include latest-videos.html %}  
+</div>

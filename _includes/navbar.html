@@ -1,0 +1,17 @@
+<div class="navbar">
+	<ul>
+		{% for link in site.data.navbar %}
+		    {% if link.url contains 'http' %}
+		        {% assign domain = '' %}
+		        {% else %}
+		        {% assign domain = site.url %}
+		    {% endif %}
+		    {% if link.title == page.navtag %}
+		    	{% assign activeclass = 'class="active"' %}
+		    	{% else %}
+		    	{% assign activeclass = '' %}
+		    {% endif %}
+		    <li {{ activeclass }} onclick="location.href='{{ domain }}{{ link.url }}'">{{ link.title }}</li>
+		{% endfor %}
+	</ul>
+</div>
