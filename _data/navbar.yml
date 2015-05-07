@@ -1,13 +1,13 @@
 # Menu navigation links
 
 - title: Home
-  url: index.html
+  url: /index.html
 
 - title: Blog
-  url: index.html
+  url: /posts/
 
 - title: Tutorials
-  url: index.html
+  url: /tags/#tutorial
 
 #- title: Portfolio
 #  url: index.html
