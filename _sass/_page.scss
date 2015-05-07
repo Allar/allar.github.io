@@ -503,7 +503,10 @@ header .entry-meta {
 .portfolio {
 	.hentry {
 		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
 		justify-content: space-between;
+		align-items: stretch;
 
 		@media #{$medium} {
 			margin-left: 20px;
@@ -523,12 +526,8 @@ header .entry-meta {
 
 	.entry-content {
 		display: block;
-		width: 320px;
+		max-width: 320px;
 		flex-grow: 1;
-	}
-
-	.port-wrapper {
-		width: 320px;
 		position: relative;
 		margin-left: auto;
 		margin-right: auto;
@@ -539,10 +538,11 @@ header .entry-meta {
 
 	.title {
 		position: absolute;
-		left: 1em;
+		padding-left: 1em;
 		bottom: 0;
 		color: #ddd;
 		background-color: rgba(0,0,0,0.5);
+		width: 100%;
 	}
 }
 
