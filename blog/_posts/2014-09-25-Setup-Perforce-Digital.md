@@ -22,11 +22,11 @@ If you are not interested in the specifics of how or why things work and are int
 
 Once you are connected to a 64-bit Linux host, run these shell commands. This will run [my perforce installation script from my repo](https://github.com/Allar/linux-perforce-installer).
 
-```shell
+{% highlight shell %}
 wget https://raw.githubusercontent.com/Allar/linux-perforce-installer/master/install-perforce
 chmod +x install-perforce
 sudo ./install-perforce
-```
+{% endhighlight %}
 
 You will be asked to create a password and user details for a new user named `perforce`. Afterwards, the server will restart and you should then be able to connect to your Perforce server.
 
