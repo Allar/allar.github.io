@@ -5,7 +5,7 @@ tags: [Allar, ue4, tutorial]
 thumbnail: "2015-11-05-Converting-BP-Project-To-CPP.gif"
 ---
 
-This document covers how to convert a Blueprint Only project to a C++ project without writing any C++ code using Windows. Some plugins and engine features require a C++ project and this is an easy way to still work in Blueprints but not be constrained by this limitation.<!-- more -->
+This document covers how to convert a Blueprint Only project to a C++ project without writing any C++ code using Windows. This isn't intended to fold down your Blueprint Logic to C++, it is meant only to wrap your Blueprint Project with a C++ project. Some plugins and engine features require a C++ project and this is an easy way to still work in Blueprints but not be constrained by this limitation.<!-- more -->
 
 # Requirements
 
