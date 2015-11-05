@@ -1,13 +1,7 @@
 # Menu navigation links
 
-- title: Twitch Channel
-  url: http://www.twitch.tv/awesomeallar
+- title: Theme Setup
+  url: /theme-setup/
 
-- title: Unreal Engine 4
-  url: http://unrealengine.com
-
-- title: Unreal Forums
-  url: https://forums.unrealengine.com/
-
-- title: Unreal Marketplace
-  url: https://www.unrealengine.com/marketplace
+- title: External Link
+  url: http://mademistakes.com

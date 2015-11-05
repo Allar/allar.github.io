@@ -2,9 +2,10 @@
 layout: post
 title: "Get All Platform Dependencies Easily"
 tags: [Allar, ue4, protip, tutorial]
+thumbnail: "2015-07-22-ProTip-GetAllPlatformDependencies.png"
 ---
 
-If you plan on compiling Unreal Engine 4 across multiple platforms and don't want to have to deal with adding all the related dependencies per platform to your source control or making sure they are all in sync across platforms or simply don't want to run Setup.sh multiple times, you can choose to fetch dependencies for all platforms from a single machine. On Windows, the easiest thing to do is to edit Setup.bat and find the line that reads:
+If you plan on compiling Unreal Engine 4 across multiple platforms and don't want to have to deal with adding all the related dependencies per platform to your source control or making sure they are all in sync across platforms or simply don't want to run Setup.sh multiple times, you can choose to fetch dependencies for all platforms from a single machine. <!-- more -->On Windows, the easiest thing to do is to edit Setup.bat and find the line that reads:
 
 	.\Engine\Binaries\DotNET\GitDependencies.exe --prompt %*
 

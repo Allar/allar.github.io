@@ -7,38 +7,25 @@
 {% include head.html %}
 </head>
 
-<body id="post-index" {% if page.image.feature %}class="feature"{% endif %}>
-
+<body id="post-index">
+  
 {% include scripts.html %}   
 
 {% include browser-upgrade.html %}
-{% include navigation.html %}
+{% include header.html %}
 
-<div class="entry-header">
-  {% if page.image.credit %}<div class="image-credit">Image source: <a href="{{ page.image.creditlink }}">{{ page.image.credit }}</a></div><!-- /.image-credit -->{% endif %}
-  {% if page.image.feature %}
-    <div class="entry-image">
-      <img src="{{ site.url }}/images/{{ page.image.feature }}" alt="{{ page.title }}">
-    </div><!-- /.entry-image -->
-  {% endif %}
-  <div class="header-title">
-    <div class="header-title-wrap">
-      <h1>{{ site.title }}</h1>
-      <h2>{{ site.description }}</h2>
-    </div><!-- /.header-title-wrap -->
-  </div><!-- /.header-title -->
-</div><!-- /.entry-header -->
-
-{% include navbar.html %}
-
-{% include portfolio.html %}
+<div id="main" role="main">
+  {{ content }}
+</div><!-- /#main -->
 
 {% include recents.html %}
 
+{% include portfolio.html %}
+
+
 {% include worked-with.html %}
 
-<div id="main" role="main">
-</div><!-- /#main -->
+
 
 <div class="footer-wrapper">
   <footer role="contentinfo">

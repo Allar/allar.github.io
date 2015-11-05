@@ -1,38 +1,57 @@
-title:            Michael Allar
+title:            Michael Allar's Blog
 description:      Unreal Engine 4 Specialized Engineer that does Other Things too
 disqus_shortname: allarsblog
 reading_time:     true
 words_per_minute: 175
+logo:             images/logo.png
 # Your site's domain goes here (eg: //mmistakes.github.io, http://mademistakes.com, etc)
 # When testing locally leave blank or use http://localhost:4000
-url:  http://allarsblog.com
+# url: http://aronbordin.com/neo-hpstr-jekyll-theme
+
+menu:
+  - title: 'Blog'
+    url: '/blog'
+  - title: 'Marketplace'
+    url: 'https://www.unrealengine.com/marketplace/generic-shooter-sample-project'
+#  - title: 'Tutorials'
+#    url: '/tutorials'
+  - title: 'Twitch'
+    url: 'http://www.twitch.tv/awesomeallar'
 
 # Owner/author information
 owner:
   name:           Michael Allar
-  avatar:         avatar.jpg
-  bio:            "Professional game developer working with Unreal Engine 3 and 4 located in the Los Angeles area."
+  site:           http://www.allarsblog.com
+  avatar:         images/avatar.jpg
+  bio:            "Epic's \"Hero of the People\". Unreal Engine 4 specialized engineer in Los Angeles. UE4 Marketplace Seller, Engine Contributor, and Forum Moderator. Whether its gameplay, middleware, UI, VR, or backend, as long as it involves UE4 engineering, he is your guy."
   email:          allar@michaelallar.com
   # Social networking links used in footer. Update and remove as you like.
-  twitter:        michaelallar
-  #facebook:       awesomeallar
-  github:         allar
-  #stackexchange:  
-  linkedin:       allar
-  #instagram:      
-  #flickr:         
-  #tumblr:         
-  # google plus id, include the '+', eg +mmistakes
+  twitter: michaelallar
+  #facebook:
+  github: allar
+  #stackexchange:
+  linkedin: allar
+  #instagram:
+  #flickr:
+  #tumblr:
+  # google plus id, include the '+', eg +AronBordin
   #google_plus:    +yourid
 
+social:
+  - title: "github"
+    url: "https://github.com/allar"
+  - title: "linkedin"
+    url: "https://www.linkedin.com/in/allar"
+  - title: "youtube"
+    url: "https://www.youtube.com/channel/UCXkrfkh3rtu08D1fZlhbPpw"
 # Background image to be tiled on all pages
-background: 
+background:
 
 # Analytics and webmaster tools stuff goes here
 google_analytics: UA-55007129-1
-google_verify:  6MIC1dP3EPSEtoKAnJayxa8Tcnfo065FIzE928vMWa4
+google_verify: 6MIC1dP3EPSEtoKAnJayxa8Tcnfo065FIzE928vMWa4
 # https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
-bing_verify:         
+bing_verify:
 
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 timezone:    America/Los_Angeles
@@ -50,7 +69,7 @@ permalink:   /:year/:month/:day/:title/
 
 # Amount of post to show on home page
 paginate: 5
-paginate_path:  "/posts/page:num"
+paginate_path:  "/blog/page:num"
 
 kramdown:
   auto_ids: true
