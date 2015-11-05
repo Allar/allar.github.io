@@ -14,25 +14,25 @@ This document covers how to convert a Blueprint Only project to a C++ project wi
 	- Make sure you install Visual C++. 2015 doesn't do this by default
 	- [During installation, choose Custom, not Typical](/images/tutorials/converting-bp-project-to-cpp/1_ChooseCustom.png){:target="_blank"}
 	- [Make sure Visual C++ and all children are selected](/images/tutorials/converting-bp-project-to-cpp/2_VisualCPP.png){:target="_blank"}
-	- If you skipped installing Visual C++ and Unreal Engine 4 is complaining about not being able to find it, you can fix this by: re-running the downloaded installer and [choosing "Modify"](/images/tutorials/converting-bp-project-to-cpp/Appendix1_2015Modify.PNG){:target="_blank"}, then [selecting Visual C++ and clicking "Update"](/images/tutorials/converting-bp-project-to-cpp/Appendix2_VisualCPP.PNG){:target="_blank"}.
+	- If you skipped installing Visual C++ and Unreal Engine 4 is complaining about not being able to find it, you can fix this by: re-running the downloaded installer and [choosing "Modify"](/images/tutorials/converting-bp-project-to-cpp/Appendix1_2015Modify.png){:target="_blank"}, then [selecting Visual C++ and clicking "Update"](/images/tutorials/converting-bp-project-to-cpp/Appendix2_VisualCPP.png){:target="_blank"}.
 
 # Convert Process
 
 1. Open Your Project in the Unreal Engine 4 Editor.
 1. [Open up the New C++ Class Dialog by using File -> New C++ Class...](/images/tutorials/converting-bp-project-to-cpp/3_NewCPPClass.png){:target="_blank"}
-1. [Choose a new "None" class and hit "Create Class."](/images/tutorials/converting-bp-project-to-cpp/4_NewNoneClass.PNG){:target="_blank"}
-1. [You may be prompted with a warning message about being able to compile the game module](/images/tutorials/converting-bp-project-to-cpp/5_PossibleWarning.PNG){:target="_blank"} You can safely ignore this and hit No.
+1. [Choose a new "None" class and hit "Create Class."](/images/tutorials/converting-bp-project-to-cpp/4_NewNoneClass.png){:target="_blank"}
+1. [You may be prompted with a warning message about being able to compile the game module](/images/tutorials/converting-bp-project-to-cpp/5_PossibleWarning.png){:target="_blank"} You can safely ignore this and hit No.
 1. Close any pop-ups, warnings, or success notifications, then close the Editor
 1. [Navigate to your project's folder, right click your project's .uproject file, and click "Generate Visual Studio project files."](/images/tutorials/converting-bp-project-to-cpp/6_RegenerateFiles.png){:target="_blank"}
-1. [Open your project in Visual Studio by double-clicking your project's .sln file.](/images/tutorials/converting-bp-project-to-cpp/7_SolutionFile.PNG){:target="_blank"}
-1. Visual Studio should load. If it asks you what theme you would like, pick what looks best to you, all screenshots here will be using the Dark theme. [You should be looking at something like this.](/images/tutorials/converting-bp-project-to-cpp/8_VSOpen.PNG){:target="_blank"}
-1. [Find and select your project in Visual Studio's Solution Explorer.](/images/tutorials/converting-bp-project-to-cpp/9_SolutionExplorer.PNG){:target="_blank"}
-1. [Set the build configuration drop down to "Development Editor"](/images/tutorials/converting-bp-project-to-cpp/10_DevelopmentEditor.PNG){:target="_blank"}
-1. [Right-click your project in the Solution Explorer and click Build.](/images/tutorials/converting-bp-project-to-cpp/11_ClickBuild.PNG){:target="_blank"}
-1. [This should result in your project being compiled successfully with zero errors.](/images/tutorials/converting-bp-project-to-cpp/12_EditorCompiled.PNG){:target="_blank"}
+1. [Open your project in Visual Studio by double-clicking your project's .sln file.](/images/tutorials/converting-bp-project-to-cpp/7_SolutionFile.png){:target="_blank"}
+1. Visual Studio should load. If it asks you what theme you would like, pick what looks best to you, all screenshots here will be using the Dark theme. [You should be looking at something like this.](/images/tutorials/converting-bp-project-to-cpp/8_VSOpen.png){:target="_blank"}
+1. [Find and select your project in Visual Studio's Solution Explorer.](/images/tutorials/converting-bp-project-to-cpp/9_SolutionExplorer.png){:target="_blank"}
+1. [Set the build configuration drop down to "Development Editor"](/images/tutorials/converting-bp-project-to-cpp/10_DevelopmentEditor.png){:target="_blank"}
+1. [Right-click your project in the Solution Explorer and click Build.](/images/tutorials/converting-bp-project-to-cpp/11_ClickBuild.png){:target="_blank"}
+1. [This should result in your project being compiled successfully with zero errors.](/images/tutorials/converting-bp-project-to-cpp/12_EditorCompiled.png){:target="_blank"}
 1. [Set the build configuration drop down to "Development"](/images/tutorials/converting-bp-project-to-cpp/13_Development.png){:target="_blank"}
 1. [Right-click your project in the Solution Explorer and click Build, again.](/images/tutorials/converting-bp-project-to-cpp/14_ClickBuild.png){:target="_blank"}
-1. This build will take much longer, on the order of several minutes. [This should result in your project being compiled successfully with zero errors though, again.](/images/tutorials/converting-bp-project-to-cpp/15_GameCompiled.PNG){:target="_blank"}
+1. This build will take much longer, on the order of several minutes. [This should result in your project being compiled successfully with zero errors though, again.](/images/tutorials/converting-bp-project-to-cpp/15_GameCompiled.png){:target="_blank"}
 
 # Finished
 
