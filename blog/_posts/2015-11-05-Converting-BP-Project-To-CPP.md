@@ -1,6 +1,5 @@
 ---
 layout: post
-title: "How To Convert a Blueprint Only Project to C++ (using Windows)"
 tags: [Allar, ue4, tutorial]
 thumbnail: "2015-11-05-Converting-BP-Project-To-CPP.gif"
 ---
