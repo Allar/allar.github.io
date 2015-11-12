@@ -7,7 +7,7 @@ thumbnail: "2015-10-30-UE4-Keyboard-Layout.png"
 
 For those who haven't discovered this magic yet, blueprint alignment lets you clean up your blueprint graphs real quick.
 
-[![Align Sample](/images/tutorials/align-nodes-like-a-pro/AlignSample.gif)](/images/tutorials/align-nodes-like-a-pro/AlignSample.gif){:target="_blank"}
+[![Align Sample](/images/tutorials/align-nodes-like-a-pro/AlignSample.gif)](/2015/11/12/Align-Nodes-Like-A-Pro/)
 
 This alignment feature comes with no keyboard shortcuts bound out of the box, which is a real shame. If you want to step up your blueprint game though, I highly recommend these easy to use custom shortcuts. You can set up custom shortcuts by navigating your editor to Edit -> Editor Preferences -> Keyboard Shortcuts. <!-- more -->
 
