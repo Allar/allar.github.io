@@ -37,7 +37,7 @@ featured-image: "GenericShooterFeature.png"
           <h1 class="preview-entry-title"><a href="{{ site.url }}{{ post.url }}" class="permalink" rel="bookmark" title="{{ post.title }}"><i class="fa fa-bookmark"></i></a> <a href="{{ post.link }}">{{ post.title }}</a></h1>
         {% else %}
           <h1 class="preview-entry-title"><a href="{{ site.url }}{{ post.url }}" rel="bookmark" title="{{ post.title }}" itemprop="url">{{ post.title }}</a></h1>
-          <h2 class="preview-entry-date"><time datetime="{{ post.date | date_to_xmlschema }}"><a href="{{ site.url }}{{ post.url }}">{{ post.date | date: "%B %d, %Y" }}</a></time> by <a href="{{ site.url }}/about/" title="About {{ site.owner.name }}">{{ site.owner.name }}</a></h2>
+          <h2 class="preview-entry-date"><time datetime="{{ post.date | date_to_xmlschema }}"><a href="{{ site.url }}{{ post.url }}">{{ post.date | date: "%B %d, %Y" }}</a></time> by {{ site.owner.name }}</h2>
         {% endif %}
       </div>
     </header>
