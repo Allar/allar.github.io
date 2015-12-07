@@ -17,7 +17,7 @@ My goal was simple. Create something that resembles the marketplace frontend fou
 
 ## The Development Platform
 
-I am a big fan of [Popcorn Time](http://popcorn-time.se/){:target="_blank"} and know that they're basically using a form of Chromium wrapped around node.js. I'm a big fan of node.js. Looking into how this type of development was done, I stumbled upon [nw.js](http://nwjs.io/) which turns out to be exactly what I wanted. I saw that others were using the `request` node module to do web requests with nw.js, so I started a blank project and popped that module in. This, combined with [cURL for Windows](http://curl.haxx.se/download.html). I now had a base for sending arbitrary web requests.
+I am a big fan of [Popcorn Time](http://popcorn-time.se/){:target="_blank"} and know that they're basically using a form of Chromium wrapped around node.js. I'm a big fan of node.js. Looking into how this type of development was done, I stumbled upon [nw.js](http://nwjs.io/){:target="_blank"} which turns out to be exactly what I wanted. I saw that others were using the `request` node module to do web requests with nw.js, so I started a blank project and popped that module in. This, combined with [cURL for Windows](http://curl.haxx.se/download.html){:target="_blank"}. I now had a base for sending arbitrary web requests.
 
 ## Figuring Out the Authentication Process
 
@@ -55,7 +55,7 @@ Now that I was logging in correctly, it was time to see if pulling down the mark
 
 ## Fiddling with `ajax-get-categories`
 
-If you look at the page source for any web marketplace page using a 'dumb' client such as cURL, you'll see that its extremely light and that most of the asset data is somehow being pulled in by JavaScript. I tried opening up the source JavaScript and uncompressing it to see if I can simply just tap into existing api functions. I spent a few hours looking through this as I found it fascinating and I learned a lot about all the different api calls Epic has set up, but it being compressed it was hard to find exactly what I wanted. During this I also found out that they are using [Handlebars](http://handlebarsjs.com/) to generate HTML from templates using javascript. This was a great sign as it means the data probably exists in a form where I can generate my own HTML using my own Handlebar templates.
+If you look at the page source for any web marketplace page using a 'dumb' client such as cURL, you'll see that its extremely light and that most of the asset data is somehow being pulled in by JavaScript. I tried opening up the source JavaScript and uncompressing it to see if I can simply just tap into existing api functions. I spent a few hours looking through this as I found it fascinating and I learned a lot about all the different api calls Epic has set up, but it being compressed it was hard to find exactly what I wanted. During this I also found out that they are using [Handlebars](http://handlebarsjs.com/){:target="_blank"} to generate HTML from templates using javascript. This was a great sign as it means the data probably exists in a form where I can generate my own HTML using my own Handlebar templates.
 
 Looking in Fiddler, there was only one web request that looked like it had anything to do with fetching data. As soon as I inspected it, it was *very* clear that there is definitely a way to get marketplace data as a JSON object. Now I just had to figure out the API.
 
@@ -198,12 +198,14 @@ I don't know the best way to fix this issue, but I wrote a dirty function that s
 
 Not the biggest feature, but important to note nonetheless. Have you ever noticed that the Contact and Support sections of asset descriptions are kind of inconsistent and are prone to errors? This is because the Contact and Support data is actually a hacky addition to the same data property that holds 'Technical Details' instead of it being treated as a proper data point for an asset. I'd really like to see 'Contact and Support' data folded into more proper, easier to maintain and read data properties.
 
-On some assets, such as [Crumbling Ruins](https://www.unrealengine.com/marketplace/crumbling-ruins) at the time of this writing have extra or duplicate data regarding 'Contact and Support', which is unfortunately visible in the launcher, web, and my custom marketplace frontend.
+On some assets, such as [Crumbling Ruins](https://www.unrealengine.com/marketplace/crumbling-ruins){:target="_blank"} at the time of this writing have extra or duplicate data regarding 'Contact and Support', which is unfortunately visible in the launcher, web, and my custom marketplace frontend.
+
+## Seller Videos as 'Proper' Data
+
+Similar to the Contact and Support snag, I wish seller's videos were stored as proper data instead of having to be parsed from the description texts. Videos are important.
 
 # The Result
 
-You can read more about the end product [here on this blog post](#) if you're interested into exactly what features exist and how far I got. Most likely you would have read that post before coming to this one though. The source code for this project is also [available here on my github](#).
+You can read more about the end product [here on this blog post](/2015-12-07-Custom-UE4-Marketplace-Frontend) if you're interested into exactly what features exist and how far I got. Most likely you would have read that post before coming to this one though. A binary release you can download and try right now is avaiable in my [repo's releases](https://github.com/Allar/custom-ue4-marketplace-frontend/releases){:target="_blank"}The source code for this project is also [available here on my github](https://github.com/Allar/custom-ue4-marketplace-frontend){:target="_blank"}.
 
 Even if this project means nothing to anyone, it was definitely a fun and worthwhile Sunday for me.
-
-I'M STILL WRITING THIS HOLD ON MAN. NEEDS LINKS FIXED AND PROOFREAD.

@@ -5,21 +5,25 @@ tags: [Allar, ue4, marketplace, launcher]
 thumbnail: "UE4-Annoying-Hat.gif"
 ---
 
-After finding out accessing UE4 Marketplace data was possible, I made a pretty cool 'custom UE4 Marketplace frontend' that mimics the launcher version of the UE4 Marketplace but with some additions I think many people would like such as searching, sorting, and seller YouTube embedding. If you would like to download it and try it for yourself, grab it from [my repo's releases page](#). [Full source code is available here on my GitHub](#). Read below to find out everything that it does (and doesn't) do! <!-- more -->
+After finding out accessing UE4 Marketplace data was possible, I made a pretty cool 'custom UE4 Marketplace frontend' that mimics the launcher version of the UE4 Marketplace but with some additions I think many people would like such as searching, sorting, and seller YouTube embedding. If you would like to download it and try it for yourself, grab it from [my repo's releases page](https://github.com/Allar/custom-ue4-marketplace-frontend/releases){:target="_blank"}. [Full source code is available here on my GitHub](https://github.com/Allar/custom-ue4-marketplace-frontend){:target="_blank"}. Read below to find out everything that it does (and doesn't) do! <!-- more -->
 
 # What Is This And How Do I Get It?
 
 This is a standalone desktop app made with [nw.js](http://nwjs.io/) and is not meant as a replacement or patch to the UE4 launcher's marketplace.
 
-You can download it and try it for yourself [here on my repo's releases page](#).
+You can download it and try it for yourself [here on my repo's releases page](https://github.com/Allar/custom-ue4-marketplace-frontend/releases){:target="_blank"}. After downloading, extract it anywhere and run `Marketplace.exe`.
 
-Its full source is available [here on my GitHub](#) so it can serve as a great beginning or reference if you wanted to create your own custom UE4 Marketplace frontend.
+Its full source is available [here on my GitHub](https://github.com/Allar/custom-ue4-marketplace-frontend){:target="_blank"} so it can serve as a great beginning or reference if you wanted to create your own custom UE4 Marketplace frontend.
 
 # Why Was This Made?
 
 Doing things like this on a Sunday and tackling projects I have no business in is what I call 'relaxing'. This project has no purpose other than I wanted to see if I can do it.
 
 There are also a lot of requests for things to be added to the marketplace launcher, such as the infamous request for adding 'search' behavior. I wanted to focus on knowing what it would take to add these features, so I've built them.
+
+# How Was This Made?
+
+To read more about how I made this, check out my [blog post on the creation process](/2015/12/07/Creating-Custom-Marketplace-Frontend/).
 
 # New Features
 
