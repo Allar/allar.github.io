@@ -143,6 +143,63 @@ Getting this into usable HTML form was trivial using Handlebars, which is probab
 
 I won't go into much detail here. Once you have the marketplace data, laying out the frontend is just your average HTML + CSS + javascript/jQuery development. For this project I used [LESS](http://lesscss.org/) to compile my CSS, but most of the work was just looking at Epic's launcher for reference and making CSS that matches. I could have possibly sniffed around and used Epic's actual stylesheets for this but learning to use their compressed versions would have been more work than just writing them from scratch. The design work was already done, aside from a few features I added, so all that remained was grunt work.
 
+# Unexpected Snags
+
+I ran into a few issues I did not expect when manipulating the marketplace data. The three worth mentioning are:
+
+## Asset 'Categories' Data Is Wrong
+
+The first step in getting assets is to ask for the assets in a `category`. These 'top level' `categories` are what all assets must fall into to be shown in the launcher or web marketplaces. Assets themselves have a `categories` property as well, perhaps so that an asset can identify itself as being in two `categories`. What ever the case, the `categories` property within assets is outdated and/or wrong. This means if you were to look up more information about the category an asset belongs to as opposed to looking for assets that belong in a category, you're going to be met with some challenges.
+
+[![Asset Categories Mismatch](/images/blog/creating-marketplace/assetcategorymismatch.png)](/images/blog/creating-marketplace/assetcategorymismatch.png) 
+
+## Asset Descriptions Are Malformed HTML
+
+It seems like the majority, if not all, of marketplace asset descriptions have some basic HTML injected into them. This isn't a problem in itself, infact it is even helpful, but the problem is however these HTML tags are being created, they are being created wrong, which means some HTML fixup is required if you needed to display them properly. To put the issue clearly This malformation results in a good chance that an asset's description has an HTML closing tag that doesn't specifiy an HTML element.
+
+Or simply put, often times `<a href="...">Text</>` is used instead of `<a href="...">Text</a>`. See the difference in closing tags? Trying to render this HTML directly could result in some problems if you don't do any pre-processing of it first.
+
+I don't know the best way to fix this issue, but I wrote a dirty function that seems to do the job.
+
+{% highlight js tabsize=2 %}
+    // Fix Epic's broken ass malformed closing tags i.e. <a></> instead of <a></a>
+    // I wrote this using some really hacky logic and the assumption that jQuery's ".parseHTML"
+    // results in a 'good enough DOM' where I can extract the tags I need to close. I don't know if this
+    // fixes every case, but it appears to be 'good enough' for now.
+    // It also replaces new lines with <br> and adds <hr> to any </h1>
+    // It then takes the fixed HTML and makes all links open in a new browser
+    $('.fix-html').each(function(index) {
+        var fixed = $(this).html();
+        fixed = fixed.replace(/&lt;/g, '<');
+        fixed = fixed.replace(/&gt;/g, '>');
+        var badTagIndex = fixed.indexOf('</>');
+        while (badTagIndex != -1) {
+            var badDOM = $.parseHTML(fixed.substring(0, badTagIndex));
+            var elementTag = $(badDOM).last().get(0).tagName.toLowerCase();
+            fixed = fixed.replace('</>', '</' + elementTag + '>')
+            badTagIndex = fixed.indexOf('</>');
+        }
+        fixed = fixed.replace(/(?:\r\n|\r|\n)/g, "<br>"); // Makes newlines pretty
+        fixed = fixed.replace(/<\/h1>/g, "</h1><hr>"); // Adds <hr> to <h1> i.e. Contact and Support
+        fixed = fixed.replace(/<br><br><h1>/g, "<br><h1>"); // Removes extra newline before <h1>'s
+        fixed = fixed.replace(/<hr><br>/g, "<hr>"); // Removes extra newline after <h1>'s        
+        $(this).html(fixed);
+        
+        // All links in these descriptions should open in a new browser
+        $(this).find('a').on('click', function(){
+            open(this.href);
+            return false;
+        });
+        
+    ...
+{% endhighlight %}
+
+## Contact and Support Not Treated As 'Proper' Data
+
+Not the biggest feature, but important to note nonetheless. Have you ever noticed that the Contact and Support sections of asset descriptions are kind of inconsistent and are prone to errors? This is because the Contact and Support data is actually a hacky addition to the same data property that holds 'Technical Details' instead of it being treated as a proper data point for an asset. I'd really like to see 'Contact and Support' data folded into more proper, easier to maintain and read data properties.
+
+On some assets, such as [Crumbling Ruins](https://www.unrealengine.com/marketplace/crumbling-ruins) at the time of this writing have extra or duplicate data regarding 'Contact and Support', which is unfortunately visible in the launcher, web, and my custom marketplace frontend.
+
 # The Result
 
 You can read more about the end product [here on this blog post](#) if you're interested into exactly what features exist and how far I got. Most likely you would have read that post before coming to this one though. The source code for this project is also [available here on my github](#).
