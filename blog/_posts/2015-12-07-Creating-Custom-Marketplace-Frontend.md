@@ -1,0 +1,112 @@
+---
+layout: post
+title: "Creating a Custom UE4 Marketplace Frontend Experiment"
+tags: [Allar, ue4, marketplace, launcher]
+thumbnail: "UE4-Annoying-Hat.gif"
+---
+
+This weekend I woke up late Saturday night and was working on an unrelated web project. This project was giving me some issues that required some HTTPS debugging using a tool called [Fiddler](http://www.telerik.com/fiddler){:target="_blank"}. Fiddler is a great tool for reading HTTPS traffic. During my debugging I caught glimpse of a UE4 ajax marketplace call that pulled down marketplace data as a JSON object. I immediately thought "I bet I could do something with this", and my great annoyance that is the marketplace launcher not having search functionality led me to start a jam session on "could I rebuild the marketplace launcher?" Turns out, you can replicate quite a lot of it easily. <!-- more -->
+
+I hate web development and I thought this would be a fun break from things. Not only did it end up being fun, it ended up being quite educational!
+
+# The Goal
+
+My goal was simple. Create something that resembles the marketplace frontend found in the UE4 launcher but include a search feature. On this journey, search ended up actually being the last thing I implemented on top of many other features I thought would be nice to have.
+
+# First Steps
+
+## The Development Platform
+
+I am a big fan of [Popcorn Time](http://popcorn-time.se/){:target="_blank"} and know that they're basically using a form of Chromium wrapped around node.js. I'm a big fan of node.js. Looking into how this type of development was done, I stumbled upon [nw.js](http://nwjs.io/) which turns out to be exactly what I wanted. I saw that others were using the `request` node module to do web requests with nw.js, so I started a blank project and popped that module in. This, combined with [cURL for Windows](http://curl.haxx.se/download.html). I now had a base for sending arbitrary web requests.
+
+## ~~Cracking~~ Figuring Out the Authentication Process
+
+From the very beginning I wanted to access the marketplace using my credentials so I can get data for what assets I owned versus not owned. I underestimated how much I didn't know about this process and this step took most of my time.
+
+My first approach was to use Fiddler to capture the login process using the web version of the marketplace and then simply recreate it. I'm not skilled at doing this sort of thing, so I spent a few hours and I gave up. I kept getting '400 Bad Requests' any time I attempted hitting the login endpoint using cURL.
+
+I then tried various ways to sniff web traffic and tried sniffing the actual launcher's traffic. Here I learned the launcher goes through a full OAuth process, whereas logging in from the web only goes through what appears to be a partial OAuth process. I tried abusing my way through the OAuth chain and replicating what the launcher was doing but Fiddler wasn't providing me with the data the launcher was sending to Epic's MCP/webserver, and I'm not skilled enough in reverse engineering to dig deeper here. Setting up a more advanced HTTPS 'man-in-the-middle' proxy server would probably work but the Google results on how to do so were scary. I went back to capturing the web login process.
+
+I found I had two major problems, cookie management and unknown api requirements.
+
+### Battling Cookies
+
+Storing the cookies needed during the login process was a big problem for me, and I still can't figure out how to get Epic's cookie requests to save in nw.js's built-in cookie support. I decided to say 'I don't know what I'm doing, lets accept the fact I have to write some bad code'. With this sin in mind, I simply turned off all cookie and redirect support in nw.js and decided to handle it myself. Any time a web request would want to set a cookie, I just set a key-value pair in a global object. Not the most elegant solution, but hey, I was finally storing cookie data.
+
+Not knowing much about web security or the HTTP protocol, I thought sending these cookies back to Epic and having them accept them would be a pain in the ass if not impossible. Turns out 'cookie-access' rules that I know of, the ones that prevent various 'cookie exploits', are dictated almost solely by browsers. Nw.js isn't really a browser and you can get it to do really whatever you want. The `request` module and cURL allowed easy setting of your 'cookie string' header. Now that I was sending good cookie data back to Epic, its webservers were *much* happier with me.
+
+### Fighting the API
+
+Now that cookie management was solved, I just needed to figure out the right sequence of endpoints and what data goes where to facilitate the login process. Fiddler helped immensely with this and all I had to do was make proper use of what Fiddler was telling me.
+
+I kept my web requests as small as possible and added data to each request one piece at a time, trying to establish all the parameters that Epic's API expects. In this process, I accidently clicked too fast on the Submit button when logging in to the web marketplace and was prompted saying I failed to log in because I have submitted the form twice. Looking at the form data, sure enough there are some hidden `SYNCRONIZE` tokens that got updated every time I loaded the login form. Instead of piecing all this form data together myself, I decided to simply just load in Epic's login form from their web server, rip out the unneeded bits like 'reset password' and 'register', and have that form run my own request instead of submitting to Epic.
+
+### Successful Login
+
+Javascript and node.js made this real easy to do, and once I got my first successful login on the first auth endpoint, the rest was easy. The web marketplace appears to go through an OAuth login process as well after you get your 'Single Sign On (SSO)' cookie and I'm not sure why. I decided to go through this process as well but the OAuth's token authorizing step doesn't return anything. Looking at Fiddler, this was the same during the 'real' web marketplace login, so I am assuming that OAuth logins for the web 'client_id' are blocked. This gives me hope that one day there will be a proper '3rd party' OAuth auth chain so people like me can script up safe and secure ways to use other people's data associated with Epic, such as "do they own my Marketplace asset?"
+
+Here is what my fancy login UI looks like:
+
+[![Login](/images/blog/creating-marketplace/Login.png)](/images/blog/creating-marketplace/Login.png)
+
+# Grabbing the Marketplace Data
+
+Now that I was logging in correctly, it was time to see if pulling down the marketplace data is even feasible. Admittedly this should have been the first thing I did but I sort of rushed into this without thinking and I was anxious to get a successful login working. At this point I added a button that would 'skip login' and go directly to data fetching and I kicked myself a bit. The ability to log in though allows for some great features later though.
+
+## Fiddling with `ajax-get-categories`
+
+If you look at the page source for any web marketplace page using a 'dumb' client such as cURL, you'll see that its extremely light and that most of the asset data is somehow being pulled in by JavaScript. I tried opening up the source JavaScript and uncompressing it to see if I can simply just tap into existing api functions. I spent a few hours looking through this as I found it fascinating and I learned a lot about all the different api calls Epic has set up, but it being compressed it was hard to find exactly what I wanted. During this I also found out that they are using [Handlebars](http://handlebarsjs.com/) to generate HTML from templates using javascript. This was a great sign as it means the data probably exists in a form where I can generate my own HTML using my own Handlebar templates.
+
+Looking in Fiddler, there was only one web request that looked like it had anything to do with fetching data. As soon as I inspected it, it was *very* clear that there is definitely a way to get marketplace data as a JSON object. Now I just had to figure out the API.
+
+[![Ajax JSON Jackpot](/images/blog/creating-marketplace/AjaxJackpot.png)](/images/blog/creating-marketplace/AjaxJackpot.png)
+
+## Fetching All Marketplace Data
+
+I tried navigating around the web marketplace a bit more to see if any more api endpoints would show up, but they didn't. It appears everything I could find is going through `ajax-get-categories`. The problem with this endpoint is that it only returns 25 assets at a time, and only for a given category. I tried adding all sorts of parameters I can think of such as `count`, `limit`, `end`, `num`, `length`, `all`, and just trying arbitrary endpoints such as `ajax-get-assets`, but I couldn't get anything to work.
+
+I'm not that great in the javascript world and I knew that fetching all this data asyncronously would be a pain in the ass for me, so I decided that I'll just get all the data all at once. It isn't pretty but I ended up with some ugly api code and a whole lot of bad bad bad global variables that would do exactly what I needed it to do.
+
+In a nutshell, this process is:
+
+1. Call `ajax-get-categories` to get a list of all available categories and how many assets are in each category
+1. Keep calling `ajax-get-categories` adjusting the `start` parameter as needed to get all assets for each category
+1. Merge all this data together into one giant javascript object
+1. Once the number of assets we have match the numbers in Step 1, we know we have all the available data
+
+In the form of some nasty ass code:
+
+{% highlight js %}
+	api.prototype.getAllAssets = function() {
+		global.fetching = true;
+		// Grabbing environments will allow us to get a full list of categories
+		module.exports.getAssetsInCategory('assets/environments', 0, false, function (json) {
+			
+			var categoriesLeft = json.categories.length;
+			global.categories = json.categories;
+					
+			// Build Category List
+			for (var i = 0; i < json.categories.length; ++i) {
+				marketplace[json.categories[i].path] = { name: json.categories[i].name };
+				module.exports.getAssetsInCategory(json.categories[i].path, 0, true, function (json, path, finished) { 
+					if(finished) {
+						categoriesLeft--;
+						if (categoriesLeft == 0) {
+							global.fetching = false;
+						}
+					}
+				});
+			}		
+		});
+	}
+{% endhighlight %}
+
+You'll see a few bad practices in that snippet alone. The fact that I'm using `module.exports` to reference other functions in the same module is probably an absolute terrible thing. It is not so apparent here, but in `getAssetsInCategory`, I abuse the `global` space pretty badly. I am quite skilled in C++ and UE4 in general, but when it comes to javascript and me, *if it works, it works*. You can look at the full code for this [in api.js](#).
+
+## Manipulating the Marketplace Data
+
+The result of my `api` set of functions I wrote results in a global object that contains all marketplace data. To inspect it, I just logged it to Chrome's console any time it was complete. This turned out to be an extremely powerful way to analyze the marketplace data and pull out what I need and where.
+
+[![Ajax JSON Jackpot](/images/blog/creating-marketplace/AjaxJackpot.png)](/images/blog/creating-marketplace/AjaxJackpot.png)
+
+I'M STILL WRITING THIS HOLD ON MAN
