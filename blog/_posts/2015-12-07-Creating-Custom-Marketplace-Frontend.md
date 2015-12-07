@@ -19,7 +19,7 @@ My goal was simple. Create something that resembles the marketplace frontend fou
 
 I am a big fan of [Popcorn Time](http://popcorn-time.se/){:target="_blank"} and know that they're basically using a form of Chromium wrapped around node.js. I'm a big fan of node.js. Looking into how this type of development was done, I stumbled upon [nw.js](http://nwjs.io/) which turns out to be exactly what I wanted. I saw that others were using the `request` node module to do web requests with nw.js, so I started a blank project and popped that module in. This, combined with [cURL for Windows](http://curl.haxx.se/download.html). I now had a base for sending arbitrary web requests.
 
-## ~~Cracking~~ Figuring Out the Authentication Process
+## Figuring Out the Authentication Process
 
 From the very beginning I wanted to access the marketplace using my credentials so I can get data for what assets I owned versus not owned. I underestimated how much I didn't know about this process and this step took most of my time.
 
@@ -76,7 +76,7 @@ In a nutshell, this process is:
 
 In the form of some nasty ass code:
 
-{% highlight js %}
+{% highlight js tabsize=2 %}
 	api.prototype.getAllAssets = function() {
 		global.fetching = true;
 		// Grabbing environments will allow us to get a full list of categories
@@ -109,4 +109,42 @@ The result of my `api` set of functions I wrote results in a global object that 
 
 [![Ajax JSON Jackpot](/images/blog/creating-marketplace/AjaxJackpot.png)](/images/blog/creating-marketplace/AjaxJackpot.png)
 
-I'M STILL WRITING THIS HOLD ON MAN
+Getting this into usable HTML form was trivial using Handlebars, which is probably why Epic also uses it. To render a category and all of its assets, I created this Handlebars template. Once the HTML layout was done, popping in the values from the marketplace data was as easy as... riding a bike? If I'm more witty, I could think of a better Handlebar pun.
+
+{% highlight html tabsize=2 %}
+	<!-- Template for showing a category and all the assets in said category -->
+    <script id="category-template" type="text/x-handlebars-template">
+      <div id="{{path}}" class="categorylist jumptarget">
+        <h1>{{info.name}}</h1>
+        <hr>
+        <div class="wrapper">
+          <ul>
+            {{#each info.assets}}
+            <li id="{{this.id}}" class="asset" data-effectivedate={{ISODateToUnix this.effectiveDate}} data-owned={{this.owned}} data-price={{this.priceValue}} data-rating={{#if this.rating}}{{this.rating.average}}{{else}}0{{/if}} data-raters={{#if this.rating}}{{this.rating.count}}{{else}}0{{/if}}>
+              <a href="#" onclick="showDetailsFor('{{../path}}','{{this.id}}')"><img class="thumb" src={{this.thumbnail}}></a>
+              <span class="title">{{this.title}}</span>
+              <span class="author">{{this.seller.name}}</span>
+              {{#if this.rating}}
+              <span class="raters">{{this.rating.average}}/5 [{{this.rating.count}}]<span class="glyph glyph-star"></span></span>
+              {{else}}
+              <span class="raters">Unrated</span>
+              {{/if}}
+              <span class="price">{{#if this.owned}}Owned{{else if this.free}}FREE{{else}}{{this.price}}{{/if}}</span>
+            </li>
+            {{/each}}
+          </ul>
+          <br/>
+        </div>
+      </div><!-- {{category_path}} -->
+    </script>
+{% endhighlight %}
+
+# Replicating the Frontend
+
+I won't go into much detail here. Once you have the marketplace data, laying out the frontend is just your average HTML + CSS + javascript/jQuery development. For this project I used [LESS](http://lesscss.org/) to compile my CSS, but most of the work was just looking at Epic's launcher for reference and making CSS that matches. I could have possibly sniffed around and used Epic's actual stylesheets for this but learning to use their compressed versions would have been more work than just writing them from scratch. The design work was already done, aside from a few features I added, so all that remained was grunt work.
+
+# The Result
+
+You can read more about the end product [here on this blog post](#) if you're interested into exactly what features exist and how far I got. Most likely you would have read that post before coming to this one though. The source code for this project is also [available here on my github](#).
+
+I'M STILL WRITING THIS HOLD ON MAN. NEEDS LINKS FIXED AND PROOFREAD.
