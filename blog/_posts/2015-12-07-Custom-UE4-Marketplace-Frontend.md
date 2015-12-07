@@ -51,7 +51,7 @@ That's right folks, searching! I've added 'real-time interactive' searching, whi
 
 You can search asset names, seller names, or both.
 
-[![Searching](/images/blog/creating-marketplace/ownership.gif)](/images/blog/creating-marketplace/searching.gif)
+[![Searching](/images/blog/creating-marketplace/searching.gif)](/images/blog/creating-marketplace/searching.gif)
 
 ## Sticky Header
 
