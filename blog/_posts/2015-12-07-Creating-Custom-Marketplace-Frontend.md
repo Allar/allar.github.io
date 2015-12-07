@@ -147,4 +147,6 @@ I won't go into much detail here. Once you have the marketplace data, laying out
 
 You can read more about the end product [here on this blog post](#) if you're interested into exactly what features exist and how far I got. Most likely you would have read that post before coming to this one though. The source code for this project is also [available here on my github](#).
 
+Even if this project means nothing to anyone, it was definitely a fun and worthwhile Sunday for me.
+
 I'M STILL WRITING THIS HOLD ON MAN. NEEDS LINKS FIXED AND PROOFREAD.
