@@ -107,7 +107,7 @@ You'll see a few bad practices in that snippet alone. The fact that I'm using `m
 
 The result of my `api` set of functions I wrote results in a global object that contains all marketplace data. To inspect it, I just logged it to Chrome's console any time it was complete. This turned out to be an extremely powerful way to analyze the marketplace data and pull out what I need and where.
 
-[![Ajax JSON Jackpot](/images/blog/creating-marketplace/AjaxJackpot.png)](/images/blog/creating-marketplace/AjaxJackpot.png)
+[![Asset Data](/images/blog/creating-marketplace/AssetData.png)](/images/blog/creating-marketplace/AssetData.png)
 
 Getting this into usable HTML form was trivial using Handlebars, which is probably why Epic also uses it. To render a category and all of its assets, I created this Handlebars template. Once the HTML layout was done, popping in the values from the marketplace data was as easy as... riding a bike? If I'm more witty, I could think of a better Handlebar pun.
 
