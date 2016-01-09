@@ -36,6 +36,6 @@ Once enabled, as of 4.11 Preview 1 you will see a red circle on the top right of
 
 If your editor crashes, you will also see a `CrashVideo.avi` in your project's `Saved\Logs` folder. These videos only capture Unreal Engine windows but will always be the size of your full desktop. Anything that isn't Unreal Engine becomes filled with red. Here is an example of a frame of a recorded video of mine when running the editor in a ~2k window while on a 4k display.
 
-[![Crash Video](/images/blog/enablingvideorecorder/RedCircle.png)](/images/blog/enablingvideorecorder/CrashVideo.png)
+[![Crash Video](/images/blog/enablingvideorecorder/CrashVideo.png)](/images/blog/enablingvideorecorder/CrashVideo.png)
 
 Crash videos do not archive themselves unfortunately like logs do. If a `CrashVideo.avi` exists and a new crash occurs, the existing video will be erased. Manually saved videos do archive themselves by incrementing a number in the filename on each save.
