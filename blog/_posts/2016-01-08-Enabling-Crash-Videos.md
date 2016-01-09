@@ -5,7 +5,7 @@ tags: [Allar, ue4, tutorial]
 thumbnail: "UE4-Annoying-Hat.gif"
 ---
 
-Long time users of Unreal Engine 4 might remember an old feature that used be in the top right of the editor that would allow you to save the last 20 seconds of your editor's activity as an uncompressed .AVI. This recording would also auto-save on crash so that if you ever experienced a crash, you have a video recording of what caused it.
+Long time users of Unreal Engine 4 might remember an old feature that used be in the top right of the editor that would allow you to save the last 20 seconds of your editor's activity as an uncompressed .AVI. This recording would also auto-save on crash so that if you ever experienced a crash, you have a video recording of what caused it. You can enable it by using the `-forceenablecrashtracker` argument. More detailed information about this feature below. <!-- more -->
 
 I believe this was disabled by default around ~4.5 with the following hardcoded `false`:
 
