@@ -1,33 +1,15 @@
-# Neo-HPSTR Jekyll Theme
-Based on https://github.com/mmistakes/hpstr-jekyll-theme
+# Allar's Blog
 
-Demo: http://aronbordin.com/neo-hpstr-jekyll-theme
+This is the repo for my website [http://www.allarsblog.com].
 
-# Live Demo
+It is built using [Jekyll](https://jekyllrb.com/){:target="_blank"} on top of [Neo-HPSTR Jekyll Theme](https://github.com/aron-bordin/neo-hpstr-jekyll-theme){:target="_blank"}'
 
-You can see it running [here](http://blog.rhesoft.com/) and [here](http://aronbordin.com/neo-hpstr-jekyll-theme/).
+# Development Setup
 
+1. Clone repo
+1. `bundle install`
+1. `jekyll serve`
 
-## What HPSTR brings to the table:
+# Fork Me
 
-* Modern design.
-* Responsive templates for post, page, and post index `_layouts`. Looks great on mobile, tablet, and desktop devices.
-* Gracefully degrades in older browsers. Compatible with Internet Explorer 8+ and all modern browsers.  
-* Sweet topbar animated menu with support for drop-downs.
-* Optional [Disqus](http://disqus.com) comments and social sharing links.
-* [Open Graph](https://developers.facebook.com/docs/opengraph/) and [Twitter Cards](https://dev.twitter.com/docs/cards) support for a better social sharing experience.
-* Simple [custom 404 page](http://mmistakes.github.io/hpstr-jekyll-theme/404.html) to get you started.
-* Stylesheets for Pygments and Coderay [syntax highlighting](http://mmistakes.github.io/hpstr-jekyll-theme/code-highlighting-post/) to make your code examples look snazzy
-* Author panel, with social links
-* Read more tag support(similar with Wordpress ).
-
-![Preview](http://aron-bordin.github.io/neo-hpstr-jekyll-theme/images/neo-hpstr-jekyll-theme-preview.png)
-
-
----
-
-## Getting Started
-
-Neo-HPSTR takes advantage of Sass and data files to make customizing easier. These features require Jekyll 2.x and will not work with older versions of Jekyll.
-
-To learn how to install and use this theme check out the [Setup Guide(Original)](http://mmistakes.github.io/hpstr-jekyll-theme/theme-setup/) for more information.
+If you see any glaring issues or other things, please submit a pull request.
