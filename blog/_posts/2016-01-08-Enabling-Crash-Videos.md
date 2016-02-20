@@ -9,7 +9,7 @@ Long time users of Unreal Engine 4 might remember an old feature that used be in
 
 I believe this was disabled by default around ~4.5 with the following hardcoded `false`:
 
-{% highlight cpp %}
+``` cpp
 #if UE_BUILD_DEVELOPMENT
 		bCrashTrackerShouldBeEnabled =
 			false && // Disable crash tracker by default for now unless someone enables it.
@@ -18,7 +18,7 @@ I believe this was disabled by default around ~4.5 with the following hardcoded 
 			!FApp::IsBenchmarking() &&
 			!FPlatformMisc::IsDebuggerPresent();
 #endif
-{% endhighlight %}
+```
 
 The next line after this hardcoded disabling however allows you to re-enable it with a command-line argument:
 

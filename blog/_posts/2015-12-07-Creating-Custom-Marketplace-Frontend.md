@@ -111,7 +111,7 @@ The result of my `api` set of functions I wrote results in a global object that 
 
 Getting this into usable HTML form was trivial using Handlebars, which is probably why Epic also uses it. To render a category and all of its assets, I created this Handlebars template. Once the HTML layout was done, popping in the values from the marketplace data was as easy as... riding a bike? If I'm more witty, I could think of a better Handlebar pun.
 
-{% highlight html tabsize=2 %}
+``` html
 	<!-- Template for showing a category and all the assets in said category -->
     <script id="category-template" type="text/x-handlebars-template">
       <div id="{{path}}" class="categorylist jumptarget">
@@ -137,7 +137,7 @@ Getting this into usable HTML form was trivial using Handlebars, which is probab
         </div>
       </div><!-- {{category_path}} -->
     </script>
-{% endhighlight %}
+```
 
 # Replicating the Frontend
 
@@ -161,7 +161,7 @@ Or simply put, often times `<a href="...">Text</>` is used instead of `<a href="
 
 I don't know the best way to fix this issue, but I wrote a dirty function that seems to do the job.
 
-{% highlight js tabsize=2 %}
+``` javascript
     // Fix Epic's broken ass malformed closing tags i.e. <a></> instead of <a></a>
     // I wrote this using some really hacky logic and the assumption that jQuery's ".parseHTML"
     // results in a 'good enough DOM' where I can extract the tags I need to close. I don't know if this
@@ -192,7 +192,7 @@ I don't know the best way to fix this issue, but I wrote a dirty function that s
         });
         
     ...
-{% endhighlight %}
+```
 
 ## Contact and Support Not Treated As 'Proper' Data
 

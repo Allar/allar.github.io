@@ -32,7 +32,7 @@ Note: The word Project in any referenced file name or code will refer to your pr
 1. Change `Type = TargetType.Game;` to `Type = TargetType.Server;`.
 1. Save this file. Your `ProjectServer.Target.cs` file should look something like this now:
 
-{% highlight csharp %}
+``` csharp
 // Your Copyright Text Here
 
 using UnrealBuildTool;
@@ -58,7 +58,7 @@ public class GenShooterServerTarget : TargetRules
 		OutExtraModuleNames.AddRange( new string[] { "GenShooter" } );
 	}
 }
-{% endhighlight %}
+```
 
 # Building your Dedicated Server
 
@@ -97,18 +97,18 @@ If you load the Windows Dedicated Server, it will seem that nothing loads up and
 After copying your files to your Linux server (which is outside the scope of this tutorial), you will need to run `ProjectServer` located in your builds `Project/Binaries/Linux/` folder. 
 
 In my case that is, loading it from a terminal would look like:
-{% highlight bash %}
+``` shell
 GenShooter/Binaries/Linux/GenShooterServer
-{% endhighlight %}
+```
 
 If you want to load it and then send it to the background so that it will not terminate when you close your terminal session, you can load it with:
-{% highlight bash %}
+``` shell
 nohup GenShooter/Binaries/Linux/GenShooterServer &
-{% endhighlight %}
+```
 
 To kill a server that has been sent to the background, find it's process name using the command `top`, then route that name to `pkill`, which would look like this:
-{% highlight bash %}
+``` shell
 pkill GenShooterServe
-{% endhighlight %}
+```
 
 Your process name is usually your server binary's name limited to 16 characters.

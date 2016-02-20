@@ -23,11 +23,11 @@ If you want to see the source of the automated version, it can be found [here on
 
 To do this automatically, log into a shell on your server, then execute the following lines:
 
-{% highlight bash %}
+``` shell
 wget https://raw.githubusercontent.com/Allar/automated-insecure-samba-share/master/automated-insecure-samba-share.sh -O automated-insecure-samba-share.sh
 chmod +x automated-insecure-samba-share.sh
 ./automated-insecure-samba-share.sh
-{% endhighlight %}
+```
 
 Your server should restart and you should have a Samba share named `Drop` ready to be accessed. [See the end of this guide](#accessing-the-new-samba-share) for details on how to access it.
 
@@ -35,31 +35,31 @@ Your server should restart and you should have a Samba share named `Drop` ready 
  
 1\. Install Samba if it isn't installed already. This can be done with:
 
-{% highlight bash %}
+``` shell
 sudo apt-get install samba
-{% endhighlight %}
+```
 	
 2\. Delete the default Samba configuration file.
 
-{% highlight bash %}
+``` shell
 sudo rm /etc/samba/smb.conf
-{% endhighlight %}
+```
 	
 3\. Make a directory for your Samba share. I will be using the directory `/home/Drop`
 
-{% highlight bash %}
+``` shell
 sudo mkdir /home/Drop
-{% endhighlight %}
+```
 	
 4\. As my created directory is outside my user directory, it had to be created by the `root` user (`sudo` does that for us). We don't want outsiders accessing the Samba share as `root`, so instead we'll make this directory accessible by the current shell user (assuming you are not logged in as root). Replace `YOUR_USERNAME_HERE` with your user name.
 
-{% highlight bash %}
+``` shell
 sudo chown YOUR_USERNAME_HERE /home/Drop
-{% endhighlight %}
+```
 
 5\. Begin editing a new Samba configuration file. Replace `YOUR_USERNAME_HERE` with the same user name you used in the previous step. Replace `YOUR_SERVER_HOSTNAME_HERE` with the hostname of your server.
 	
-{% highlight ini %}
+``` ini
 [global]
 guest account = YOUR_USERNAME_HERE
 map to guest = bad user
@@ -76,21 +76,21 @@ guest ok = yes
 read only = no
 writable = yes
 public = yes
-{% endhighlight %}
+```
 
 6\. If you want to add additional Samba shares, copy paste the entire `[Drop]` definition and add it to the bottom of the configuration file. Then change `[Drop]` to `[THE_NAME_OF_YOUR_SHARE]` and `path = /home/Drop` to the path of your new share's directory.
 
 7\. Be sure to allow Samba access through your firewall. I'm using UFW here as it is pretty straightforward.
 
-{% highlight bash %}
+``` shell
 sudo ufw allow samba
-{% endhighlight %}
+```
 
 8\. Reboot the server.
 
-{% highlight bash %}
+``` shell
 sudo reboot
-{% endhighlight %}
+```
 	
 # Accessing the new Samba Share
 

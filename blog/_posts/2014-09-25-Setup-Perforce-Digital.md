@@ -22,11 +22,11 @@ If you are not interested in the specifics of how or why things work and are int
 
 Once you are connected to a 64-bit Linux host, run these shell commands. This will run [my perforce installation script from my repo](https://github.com/Allar/linux-perforce-installer).
 
-{% highlight bash %}
+``` shell
 wget https://raw.githubusercontent.com/Allar/linux-perforce-installer/master/install-perforce
 chmod +x install-perforce
 sudo ./install-perforce
-{% endhighlight %}
+```
 
 You will be asked to create a password and user details for a new user named `perforce`. Afterwards, the server will restart and you should then be able to connect to your Perforce server.
 
@@ -97,9 +97,9 @@ There are a lot of steps here that can be customized depending on your needs, bu
 
 The first step is to download Perforce Server. To find the latest version of Perforce, you can view all versions of Perforce [here](ftp://ftp.perforce.com/perforce/). As of this writing on September 25, 2014, the latest Linux 64-bit version is `r14.1/bin.linux26x86_64` with download URL `ftp://ftp.perforce.com/perforce/r14.1/bin.linux26x86_64/p4d`. To download this on the server, we can use the shell command `wget` to... get it.
 
-{% highlight bash %}
+``` shell
 wget ftp://ftp.perforce.com/perforce/r14.1/bin.linux26x86_64/p4d
-{% endhighlight %}
+```
     
 Enter the command above and your server should download the file directly.
 
@@ -109,23 +109,23 @@ Enter the command above and your server should download the file directly.
 
 Linux shells usually require an executable flag set on downloaded files if you want to run them. Ubuntu and Perforce are no exception. To make the file executable, use:
 
-{% highlight bash %}
+``` shell
 chmod +x p4d
-{% endhighlight %}
+```
     
 Once the `p4d` server binary is executable, lets move it to `/usr/local/bin`
 
-{% highlight bash %}
+``` shell
 sudo mv p4d /usr/local/bin
-{% endhighlight %}
+```
     
 ### Setting Up Basic Permissions Security
 
 It is __highly not recommended that you run your Perforce server as `root`__. `root` has far too much power and if someone were to run bad things through your Perforce server (which is highly unlikely), it should be isolated in terms of what it can do on the system. To do this we are going to add a new user.
 
-{% highlight bash %}
+``` shell
 sudo adduser perforce
-{% endhighlight %}
+```
     
 This will prompt you to create a password and enter some details about the new user. These details are not too important and I just set the user's full name to Perforce.
 
@@ -134,50 +134,50 @@ This will prompt you to create a password and enter some details about the new u
 ### Creating the Perforce Server Root
 
 Now we need to create the directories that will house our Perforce server database files and logs. These files essentially store the settings of your server. We will also need to give the `perforce` user permission to use these files.
-{% highlight bash %}
+``` shell
 sudo mkdir /perforce_depot
 sudo chown perforce /perforce_depot
 sudo mkdir /var/log/perforce
 sudo chown perforce /var/log/perforce
-{% endhighlight %}
+```
     
 ### Installing Daemon
 
 `daemon` is a Linux tool that turns a program into a daemon. A daemon is a background task that runs behind everything and isn't directly interactable. This is important as we want our Perforce server to always be running in the background, otherwise if you start the server in your PuTTY shell, as soon as you quit your shell your Perforce server would also shut down. To install `daemon`, use the following command:
 
-{% highlight bash %}
+``` shell
 sudo apt-get install daemon
-{% endhighlight %}
+```
     
 ### Setting Up Perforce As A Boot Daemon
 
 We don't want to keep manually starting our Perforce server every time the DigitalOcean server goes down, even if the server will generally never crash or hang. If we need to restart the server for any reason, setting up Perforce as a boot daemon will make sure it will always be running. First we need to go to the directory that has a bunch of system initialization controls.
 
-{% highlight bash %}
+``` shell
 cd /etc/init.d
-{% endhighlight %}
+```
     
 Now we need a startup script for root which will launch a `p4d` daemon under the user `perforce`. I usually use [this script](https://github.com/Allar/linux-perforce-installer/blob/master/p4dservice) for a while without any issue.
 
-{% highlight bash %}
+``` shell
 wget https://raw.githubusercontent.com/Allar/linux-perforce-installer/master/p4dservice
 chmod +x p4dservice
-{% endhighlight %}
+```
     
 
 Once you have the script saved, we need to update Ubuntu's boot process with it using the command:
 
-{% highlight bash %}
+``` shell
 sudo update-rc.d p4dservice defaults
-{% endhighlight %}
+```
     
 ### Starting Up Perforce Server For The First Time
 
 If everything is set up correctly, restarting the DigitalOcean droplet should boot the perforce server. To restart the server:
 
-{% highlight bash %}
+``` shell
 sudo reboot
-{% endhighlight %}
+```
     
 PuTTY should close saying the connection has lost and your shell should become inactive. You should close it now.
 
@@ -215,15 +215,15 @@ To disable user creation to everyone but yourself, open up Windows command promp
 
 Once your command prompt or terminal is open, run the command:
 
-{% highlight bash %}
+``` shell
 p4 configure set dm.user.noautocreate=2
-{% endhighlight %}
+```
     
 You should then be prompted with:
 
-{% highlight bash %}
+``` shell
 F:\depot>p4 configure set dm.user.noautocreate=2
 For server 'any', configuration variable 'dm.user.noautocreate' set to '2'
-{% endhighlight %}
+```
 
 This post has gotten pretty long, so I will separate the next part into a post of its own. [The next section will be about which files to add to your Perforce server when using UE4 either built from source code or if you are just uploading your project files only](/2014/09/27/Setup-Perforce-Digital-Part2).
