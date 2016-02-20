@@ -1,8 +1,8 @@
 # Allar's Blog
 
-This is the repo for my website [http://www.allarsblog.com].
+This is the repo for my website http://www.allarsblog.com.
 
-It is built using [Jekyll](https://jekyllrb.com/){:target="_blank"} on top of [Neo-HPSTR Jekyll Theme](https://github.com/aron-bordin/neo-hpstr-jekyll-theme){:target="_blank"}'
+It is built using [Jekyll](https://jekyllrb.com/) on top of [Neo-HPSTR Jekyll Theme](https://github.com/aron-bordin/neo-hpstr-jekyll-theme).'
 
 # Development Setup
 
