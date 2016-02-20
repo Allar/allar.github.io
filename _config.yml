@@ -11,6 +11,8 @@ logo:             images/logo.png
 menu:
   - title: 'Blog'
     url: '/blog'
+  - title: 'Projects'
+    url: /projects
   - title: 'Marketplace'
     url: 'https://www.unrealengine.com/marketplace/generic-shooter-sample-project'
 #  - title: 'Tutorials'
