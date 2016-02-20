@@ -76,30 +76,30 @@ In a nutshell, this process is:
 
 In the form of some nasty ass code:
 
-{% highlight js tabsize=2 %}
-	api.prototype.getAllAssets = function() {
-		global.fetching = true;
-		// Grabbing environments will allow us to get a full list of categories
-		module.exports.getAssetsInCategory('assets/environments', 0, false, function (json) {
-			
-			var categoriesLeft = json.categories.length;
-			global.categories = json.categories;
-					
-			// Build Category List
-			for (var i = 0; i < json.categories.length; ++i) {
-				marketplace[json.categories[i].path] = { name: json.categories[i].name };
-				module.exports.getAssetsInCategory(json.categories[i].path, 0, true, function (json, path, finished) { 
-					if(finished) {
-						categoriesLeft--;
-						if (categoriesLeft == 0) {
-							global.fetching = false;
-						}
-					}
-				});
-			}		
-		});
-	}
-{% endhighlight %}
+``` javascript
+api.prototype.getAllAssets = function() {
+    global.fetching = true;
+    // Grabbing environments will allow us to get a full list of categories
+    module.exports.getAssetsInCategory('assets/environments', 0, false, function (json) {
+        
+        var categoriesLeft = json.categories.length;
+        global.categories = json.categories;
+                
+        // Build Category List
+        for (var i = 0; i < json.categories.length; ++i) {
+            marketplace[json.categories[i].path] = { name: json.categories[i].name };
+            module.exports.getAssetsInCategory(json.categories[i].path, 0, true, function (json, path, finished) { 
+                if(finished) {
+                    categoriesLeft--;
+                    if (categoriesLeft == 0) {
+                        global.fetching = false;
+                    }
+                }
+            });
+        }		
+    });
+}
+```
 
 You'll see a few bad practices in that snippet alone. The fact that I'm using `module.exports` to reference other functions in the same module is probably an absolute terrible thing. It is not so apparent here, but in `getAssetsInCategory`, I abuse the `global` space pretty badly. I am quite skilled in C++ and UE4 in general, but when it comes to javascript and me, *if it works, it works*. You can look at the full code for this [in api.js](#).
 
