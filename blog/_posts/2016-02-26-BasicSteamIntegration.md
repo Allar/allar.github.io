@@ -23,7 +23,7 @@ If you are looking to get Steam running for any other build besides `WindowsNoEd
 
 ## Warning
 
-Once you enable `OnlineSubsystemSteam`, testing your multiplayer games locally by having multiple clients run on the same machine will cause all sorts of failures as Steam is very against the idea of running multiple games under the same Steam account simultaneously.
+Once you enable `OnlineSubsystemSteam`, testing your multiplayer games locally by having multiple clients run on the same machine will cause all sorts of failures as Steam is very against the idea of running multiple games under the same Steam account simultaneously. Instead, you will have to have multiple machines to test or run your game clients in isolated Virtual Machines.
 
 If you need to test a multiplayer game locally, you should disable Steam by running `-nosteam` as a command argument or by switching back to `OnlineSubsystemNull`.
 
