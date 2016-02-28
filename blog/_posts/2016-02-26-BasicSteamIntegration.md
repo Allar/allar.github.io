@@ -9,9 +9,11 @@ This is the first step in a series of guides that will show you how to enable th
 
 ## Results
 
-The result of this guide should leave you with a project that has the Steam Overlay working correctly for `WindowsNoEditor` builds, with Steam showing you as playing Spacewar. Spacewar is a test game on Steam that everyone owns and eases Steam development.
+The result of this guide should leave you with a project that has the Steam Overlay working correctly for client builds, with Steam showing you as playing Spacewar. Spacewar is a test game on Steam that everyone owns and eases Steam development.
 
-If you already have session management working without Steam (i.e. your server browser works on LAN using `OnlineSubsystemNull`) then your session management logic should also work under Steam.
+For Server builds, this covers how to get the server to initialize Steam correctly. This does not set up any session or server list management however.
+
+If you already have session management working without Steam (i.e. your server browser works on LAN using `OnlineSubsystemNull`) then your session management logic should also work with Steam.
 
 _PLEASE NOTE:_ By default, Steam sessions are created using 'Steam Presence', what this means is that instead of using Steam's master server list for global server searching, Steam will only return sessions within your Steam region and sometimes sessions related to the people on your friends list. If you enable Steam and are unable to see your buddy's server that happens to be on the other side of Earth, it is not an issue with your configuration but how Epic handles Steam sessions. To correct this, please refer to my `GenericPlatformTools` plugin. (At the time of this writing, `GenericPlatformTools` documentation does not exist.)
 
