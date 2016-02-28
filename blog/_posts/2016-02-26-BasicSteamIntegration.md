@@ -15,10 +15,6 @@ If you already have session management working without Steam (i.e. your server b
 
 _PLEASE NOTE:_ By default, Steam sessions are created using 'Steam Presence', what this means is that instead of using Steam's master server list for global server searching, Steam will only return sessions within your Steam region and sometimes sessions related to the people on your friends list. If you enable Steam and are unable to see your buddy's server that happens to be on the other side of Earth, it is not an issue with your configuration but how Epic handles Steam sessions. To correct this, please refer to my `GenericPlatformTools` plugin. (At the time of this writing, `GenericPlatformTools` documentation does not exist.)
 
-## Dedicated Server and Other Platform Support
-
-If you are looking to get Steam running for any other build besides `WindowsNoEditor` such as a Windows dedicated server or any other platform, please follow this tutorial and move on to the next steps in this guide. (At the time of this writing, these tutorials do not exist, but please check back later.)
-
 ## Warning
 
 Once you enable `OnlineSubsystemSteam`, testing your multiplayer games locally by having multiple clients run on the same machine will cause all sorts of failures as Steam is very against the idea of running multiple games under the same Steam account simultaneously. Instead, you will have to have multiple machines to test or run your game clients in isolated Virtual Machines.
