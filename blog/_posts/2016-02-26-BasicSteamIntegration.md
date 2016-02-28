@@ -206,6 +206,8 @@ At the time of this writing using Unreal Engine 4.10, there is an issue with how
 
 This workaround is fairly simple. To get a Windows dedicated server to properly load Steam, you need to place a copy of all the files within your `Engine\Binaries\ThirdParty\Steamworks\Steamv132\Win64` folder into your Project's `Binaries\Win64` folder such as that these files are side-by-side with `ProjectServer.exe`.
 
+[![Windows Dedicated Server Fix](/images/blog/steamguide/basic/WinServerFix.png)](/images/blog/steamguide/basic/WinServerFix.png)
+
 ## Linux Dedicated Server Steam Fix
 
 This workaround is much more involved. If you are reading this currently, I have not written this section of this guide yet, please check back later.
