@@ -202,6 +202,8 @@ Now that you have made these code changes, you will have to regenerate and recom
 
 At the time of this writing using Unreal Engine 4.10, there is an issue with how dedicated servers for C++ projects find the Steam shared library files. If you cook and run a dedicated server after the above steps, Steam initialization may fail.
 
+You may have to apply these Steam fixes every time you cook a new server build if your server deployments remove the resulting `steamclient.so` file from this fix.
+
 ## Windows Dedicated Server Steam Fix
 
 This workaround is fairly simple. To get a Windows dedicated server to properly load Steam, you need to place a copy of all the files within your `Engine\Binaries\ThirdParty\Steamworks\Steamv132\Win64` folder into your Project's `Binaries\Win64` folder such as that these files are side-by-side with `ProjectServer.exe`.
@@ -210,7 +212,43 @@ This workaround is fairly simple. To get a Windows dedicated server to properly 
 
 ## Linux Dedicated Server Steam Fix
 
-This workaround is much more involved. If you are reading this currently, I have not written this section of this guide yet, please check back later.
+Similar to the Windows Dedicated Server fix, we need to place a Steam shared library side-by-side with our Linux server executable. This is a bit harder to do though as Epic does not provide a Linux Steam shared library, specifically `steamclient.so`. Because of this, we will have to grab our own copy.
+
+The easiest way to do this is to use the SteamCMD client on a Linux host. To install SteamCMD, you can either follow the guide on [Valve's Wiki](https://developer.valvesoftware.com/wiki/SteamCMD) or try this condensed form:
+
+``` shell
+cd ~
+mkdir steamcmd
+cd steamcmd
+sudo apt-get install lib32stdc++6
+wget https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz
+tar -xvzf steamcmd_linux.tar.gz
+./steamcmd.sh
+```
+
+This will download, extract, and run the SteamCMD client. After these commands, you should be prompted with a `Steam>` shell. 
+
+Depending on if your Linux host is 32-bit or 64-bit, follow the appropriate section.
+
+### Linux 32-bit Steam Shared Library
+
+At this point you already should have the 32-bit Linux Steam Shared Library required to run your game. You can close SteamCMD running the command `exit`.
+
+The 32-bit Steam Shared Library, `steamclient.so`, is located in your `~/steamcmd/linux32` folder. Simply copy this `steamclient.so` file so that a copy of it exists side by side with your Project's Linux server binary, for example, inside `GenericShooter/Binaries/Linux`. Your Linux dedicated server should now initialize Steam correctly.
+
+### Linux 64-bit Steam Shared Library
+
+If your Linux host is 64-bit, a bit more work is required. The SteamCMD program only comes with a 32-bit Linux shared library by default, so you will have to force a download of the 64-bit dedicated server redistributables. To do so, you should still be in your `Steam>` shell. If not, simply run `./steamcmd.sh` again.
+
+In your Steam shell, run the following:
+
+``` shell
+login anonymous
+app_update 1007
+exit
+```
+
+This will tell Steam to download the Steam SDK Redistributables, which includes the 64-bit Linux Steam shared library. After running the above, you can find the 64-bit Linux Steam shared library, `steamclient.so`, inside `~/Steam/steamapps/common/Steamworks SDK Redist/linux64/`. Simply copy this `steamclient.so` file so that a copy of it exists side by side with your Project's Linux server binary, for example, inside `GenericShooter/Binaries/Linux`. Your Linux dedicated server should now initialize Steam correctly.
 
 # Testing Your Steam Implementation
 
