@@ -60,6 +60,7 @@ timezone:    America/Los_Angeles
 future:      true
 markdown:    kramdown
 gems:
+  - rouge
   - jekyll-paginate
   - jekyll-sitemap
 sass:
@@ -79,10 +80,7 @@ kramdown:
   entity_output: as_char
   toc_levels: 1..6
   input: GFM
-  syntax_highlighter: rogue
-  
-rogue:
-  line_numbers: true
+  syntax_highlighter: rouge
 
 include: [".htaccess"]
 exclude: ["lib", "config.rb", "Capfile", "config", "Gemfile", "Gemfile.lock", "README.md", "LICENSE", "log", "Rakefile", "Rakefile.rb", "tmp", "less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules"]

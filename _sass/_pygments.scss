@@ -1,6 +1,6 @@
 .highlight {
-	// margin-bottom: 1.5em;
-	@include font(12);
+	// @include font(12);
+    padding-left: 8px;
 	color: #d0d0d0;
 	border: 1px solid darken($body-color, 5);
 	background-color: #272822;
@@ -10,7 +10,7 @@
 		margin: 0;
 		padding: 1em;
 	}
-	.lineno { padding-right: 24px; color: #8f908a;}
+	.lineno { padding: 0; padding-right: 16px; color: #8f908a; min-width: 16px; }
 	.hll { background-color: #49483e }
 	.c { color: #75715e } /* Comment */
 	.err { color: #960050; background-color: #1e0010 } /* Error */
