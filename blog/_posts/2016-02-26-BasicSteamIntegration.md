@@ -150,7 +150,7 @@ public GenericShooterServerTarget(TargetInfo Target)
 
 ### Project.Build.cs
 
-Within your Project's `Source' folder, you should see a folder also with the name of your Project. Navigate into this folder and you should find a `Project.Build.cs` file. This file tells the Unreal Build Tool what modules your project depends on. We will need to add the `OnlineSubsystemSteam` module to its dependency list.
+Within your Project's `Source` folder, you should see a folder also with the name of your Project. Navigate into this folder and you should find a `Project.Build.cs` file. This file tells the Unreal Build Tool what modules your project depends on. We will need to add the `OnlineSubsystemSteam` module to its dependency list.
 
 If you are using a C++ template or converted your Blueprint project to C++, you may already have the code needed but commented out. If so, replace that code with the code provided here.
 
