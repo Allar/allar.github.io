@@ -112,7 +112,7 @@ These `NetDriverDefinitions` tell UE4 to use the Steam networking layer instead 
 
 ## Linking The OnlineSubsystemSteam Module
 
-This section applies to C++ projects only. If you are working on a Blueprint only project, skip down to (Testing Your Steam Implementation)[#testing-your-steam-implementation]. If you want to convert your Blueprint project to a C++ project, [check out this guide.](/2015/11/05/Converting-BP-Project-To-CPP/)
+This section applies to C++ projects only. If you are working on a Blueprint only project, skip down to <a href="#testing-your-steam-implementation">Testing Your Steam Implementation</a>. If you want to convert your Blueprint project to a C++ project, [check out this guide.](/2015/11/05/Converting-BP-Project-To-CPP/)
 
 All the changes required on the code side of your C++ project for UE4's Steam Integration will take place in your project's `Target.cs` and `Build.cs` files. You can find these files in your Project's `Source` folder. Please note that the filenames of your `Target.cs` files will be named after your project name and will be different than mine here.
 
