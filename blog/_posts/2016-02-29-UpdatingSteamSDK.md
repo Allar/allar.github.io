@@ -36,7 +36,7 @@ In addition to the SDK source files you will extract, you will also need to upda
 
 Create a folder in this `Engine\Source\ThirdParty\Steamworks` folder named `SteamvXXX` where `XXX` is the version you are updating to without the `.` punctionation mark. Be sure to include any letter suffixes. For example, when installing version v1.36, the folder you would create would be named `Steamv136`. If installing v1.35a, name the folder `Steamv135a`.
 
-[![Source File Folder Creation](/images/tutorials0/steam/update-sdk/SourceFolder.png)](/images/tutorials0/steam/update-sdk/SourceFolder.png)
+[![Source File Folder Creation](/images/tutorials/steam/update-sdk/SourceFolder.png)](/images/tutorials0/steam/update-sdk/SourceFolder.png)
 
 Download the latest version of the Steamworks SDK from the Steamworks backend page, and extract the contents of the archive into the folder you created above. This should leave you with an `sdk` folder inside your `SteamvXXX` folder.
 
@@ -46,7 +46,7 @@ This will provide UE4 with the source files needed to be built against this vers
 
 Create a new folder in `Engine\Binaries\ThirdParty\Steamworks` named the same as you did in the previous steps, for example, `Steamv136`. Within this folder, create folders named `Linux`, `Win32`, and `Win64`.
 
-[![ThirdParty Binaries Folder](/images/tutorials0/steam/update-sdk/ThirdPartyBinariesFolder.png)](/images/tutorials0/steam/update-sdk/ThirdPartyBinariesFolder.png)
+[![ThirdParty Binaries Folder](/images/tutorials/steam/update-sdk/ThirdPartyBinariesFolder.png)](/images/tutorials0/steam/update-sdk/ThirdPartyBinariesFolder.png)
 
 For Windows 64-bit binaries, navigate to the folder `sdk\redistributable_bin\win64\` inside the Steamworks SDK version that you downloaded and copy all the files within to your Engine's `Engine\Binaries\ThirdParty\Steamworks\SteamvXXX\Win64`.
 
