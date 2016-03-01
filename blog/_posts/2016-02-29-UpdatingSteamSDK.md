@@ -54,7 +54,7 @@ For Windows 64-bit binaries, navigate to the folder `sdk\redistributable_bin\win
 
 For Windows 32-bit binaries, navigate to the folder `sdk\redistributable_bin\` inside the Steamworks SDK version that you downloaded and copy the `steam_api.dll` and `steam_api.lib` files to your Engine's `Engine\Binaries\ThirdParty\Steamworks\SteamvXXX\Win32`.
 
-For Linux binaries, navigate to the folder `sdk\redistributable_bin\linux32` inside the Steamworks SDK version that you downloaded and copy all the files within to your Engine's `Engine\Binaries\ThirdParty\Steamworks\SteamvXXX\Linux`. Even if you are running a 64-bit Linux, UE4 defaults to making 32-bit versions of your project for Linux.
+For Linux binaries, navigate to the folder `sdk\redistributable_bin\linux64` inside the Steamworks SDK version that you downloaded and copy all the files within to your Engine's `Engine\Binaries\ThirdParty\Steamworks\SteamvXXX\Linux`. Please note that now your servers must be running on 64-bit operating systems. If you are going to run on 32-bit systems, use the files in `sdk\redistributable_bin\linux32` instead.
 
 #### Windows Server Redistributable Binaries
 
