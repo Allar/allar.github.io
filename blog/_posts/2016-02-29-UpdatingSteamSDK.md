@@ -48,11 +48,53 @@ Create a new folder in `Engine\Binaries\ThirdParty\Steamworks` named the same as
 
 [![ThirdParty Binaries Folder](/images/tutorials/steam/update-sdk/ThirdPartyBinariesFolder.png)](/images/tutorials0/steam/update-sdk/ThirdPartyBinariesFolder.png)
 
+#### SDK Supplied Binaries
+
 For Windows 64-bit binaries, navigate to the folder `sdk\redistributable_bin\win64\` inside the Steamworks SDK version that you downloaded and copy all the files within to your Engine's `Engine\Binaries\ThirdParty\Steamworks\SteamvXXX\Win64`.
 
 For Windows 32-bit binaries, navigate to the folder `sdk\redistributable_bin\` inside the Steamworks SDK version that you downloaded and copy the `steam_api.dll` and `steam_api.lib` files to your Engine's `Engine\Binaries\ThirdParty\Steamworks\SteamvXXX\Win32`.
 
 For Linux binaries, navigate to the folder `sdk\redistributable_bin\linux32` inside the Steamworks SDK version that you downloaded and copy all the files within to your Engine's `Engine\Binaries\ThirdParty\Steamworks\SteamvXXX\Linux`. Even if you are running a 64-bit Linux, UE4 defaults to making 32-bit versions of your project for Linux.
+
+#### Windows Server Redistributable Binaries
+
+You will need to grab the Steamworks SDK Redistributables as well using the SteamCMD tool and place these binaries in the folders we created. Grabbing these redistributables requires the use of the SteamCMD tool. If you don't do this step, the Unreal Cooker will fail when trying to cook your projects.
+
+Download the SteamCmd tool from [Valve's CDN](https://steamcdn-a.akamaihd.net/client/installer/steamcmd.zip) and extract it to an easy to get to folder, such as a folder named `steamcmd` on your desktop.
+
+Once extracted, you will need to get a command prompt in this folder. The easiest way to do this is to hold Shift then right-click in the empty space of the folder in Windows Explorer, then choose `Open Command Prompt Here`.
+
+[![Steam Cmd Prompt Folder](/images/tutorials/steam/update-sdk/SteamCmdPrompt.png)](/images/tutorials0/steam/update-sdk/SteamCmdPrompt.png)
+
+Simply run `steamcmd.exe` using the command prompt. SteamCMD will automatically update and install itself. After it is done installing, you should be left with the Steam shell.
+
+``` shell
+Steam>
+```
+
+Once at this shell, run the following commands:
+
+``` shell
+login anonymous
+app_update 1007
+exit
+```
+
+This will cause SteamCMD to download the Steamworks SDK Redistributables. Once this is done, you can close the command prompt. The process should look something like this:
+
+[![Steam Cmd](/images/tutorials/steam/update-sdk/SteamCmdProcess.gif)](/images/tutorials0/steam/update-sdk/SteamCmdProcess.gif)
+
+Once that is done, navigate to the `steamapps\common\Steamworks SDK Redist\` folder inside the `steamcmd` folder you created. In this folder you will see a few files. These are the Steamworks SDK Redistributable files you will need to copy into your engine build.
+
+Similar to above, copy the 64-bit binaries into your Engine's `Engine\Binaries\ThirdParty\Steamworks\SteamvXXX\Win64` folder and copy the 32-bit binaries into your Engine's `Engine\Binaries\ThirdParty\Steamworks\SteamvXXX\Win32` folder.
+
+The files ending in `_64` are 64-bit, the others are 32-bit.
+
+[![Steam Cmd](/images/tutorials/steam/update-sdk/RedistFiles.png)](/images/tutorials0/steam/update-sdk/RedistFiles.png)
+
+Your final `Engine\Binaries\ThirdParty\Steamworks\SteamvXXX` Windows platform folders should look something like:
+
+[![Steam Cmd](/images/tutorials/steam/update-sdk/Win64SteamworksFiles.png)](/images/tutorials0/steam/update-sdk/Win64SteamworksFiles.png)
 
 ## Update UE4's Steamworks SDK References
  
