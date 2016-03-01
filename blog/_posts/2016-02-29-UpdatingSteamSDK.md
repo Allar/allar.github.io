@@ -155,4 +155,14 @@ At the time of this writing however, if you are performing an update from v1.32 
 
 At the time of this writing, UE4 4.11 and older provide an outdated implementation of the Steam Controller API in their `SteamController` plugin. In order to fix this issue when updating the Steamworks SDK, I have written a replacement plugin the `SteamController` module.
 
-@TODO: STILL WRITING THIS, THIS SHOULD BE UP SOON.
+This section may become irrelevant if Epic ever updates their implementation.
+
+### Downloading the SteamController Plugin Replacement
+
+I have made my SteamController Plugin replacement available [at a repo on my GitHub](https://github.com/Allar/ue4-steamcontroller-update). Simply download this repo as a .zip.
+
+This serves as a full drop-in replacement, so first you will need to delete your pre-existing SteamController plugin. To do this, navigate to your Engine's `Engine\Plugins\Runtime\Steam\SteamController` and delete *everything* inside.
+
+Once the pre-existing plugin is deleted, extract the contents of the replacement's `Engine\Plugins\Runtime\Steam\SteamController` into this folder.
+
+You should be able to regenerate your project files and compile as usual. Your Engine and game projects should now all be running the version of the Steamworks SDK you've updated to and initialize correctly.
