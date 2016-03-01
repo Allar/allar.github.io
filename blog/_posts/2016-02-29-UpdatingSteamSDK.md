@@ -165,4 +165,6 @@ This serves as a full drop-in replacement, so first you will need to delete your
 
 Once the pre-existing plugin is deleted, extract the contents of the replacement's `Engine\Plugins\Runtime\Steam\SteamController` into this folder.
 
+This replacement plugin is set to use Steamworks SDK v1.36. If you are not using v1.36, you will need to repeat the `SteamController.cpp` edit <a href="#steamcontroller.cpp">detailed above</a>.
+
 You should be able to regenerate your project files and compile as usual. Your Engine and game projects should now all be running the version of the Steamworks SDK you've updated to and initialize correctly.
