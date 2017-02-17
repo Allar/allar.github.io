@@ -33,6 +33,9 @@ And while on the subject of securing the marketplace API, I will link my investi
 
 The following opinions are offered in no particular order:
 
+* TOC
+{:toc}
+
 # Two Search Boxes
 
 ![Two Search Boxes](/images/mp/double-search.png)
