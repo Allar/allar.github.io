@@ -276,6 +276,10 @@ When rejecting an asset, the rejection notice from the marketplace staff can be 
 
 ![Rejected Vagueness](/images/mp/rejects.png)
 
+# Not Exhaustive
+
+This by far isn't every little thing I'd like to change. But its a start. Things like sellers editing their assets, changes to the rating system, seller promo codes, and more. I feel like in order to get those features however, we need to fix the current issues to have a stronger foundation to build upon.
+
 # More Opinion
 
 I love the marketplace. It has greatly benefited me as a seller, a buyer, and as a professional freelancer. It pains me to think of the marketplace as an Epic executive ignored and low priority branch, and I hope I'm proven wrong that this is not the case. The 30% cut from sellers hurts every month when sellers don't see continual improvement of the system and more engaging feedback. Feedback needs to be an open two-way street for sellers to feel like the system respects them.
