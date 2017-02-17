@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Opinions on Marketplace Issues"
+title: "Opinion on Epic's Unreal Engine 4 Marketplace: Issues"
 tags: [Allar, ue4, marketplace]
 thumbnail: "UE4-Annoying-Hat.gif"
 ---
