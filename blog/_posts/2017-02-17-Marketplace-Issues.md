@@ -35,7 +35,7 @@ The following opinions are offered in no particular order:
 
 # Two Search Boxes
 
-![Two Search Boxes](images/mp/double-search.png)
+![Two Search Boxes](/images/mp/double-search.png)
 
 Currently on the UE4 Marketplace webpage, there exists two types of search. The topmost one searches ‘the Unreal universe’ for everything except marketplace info.
 
@@ -66,7 +66,7 @@ Many sellers don’t even know people can leave comments on their seller pages.
 
 # Asset Images – Sizing And Cropping
 
-![Sizing and Cropping Issues](images/mp/cropping.jpg)
+![Sizing and Cropping Issues](/images/mp/cropping.jpg)
 
 Even if a seller follows submission guidelines for images exactly as written, it is not guaranteed the Marketplace will show the right image for the right location, and it’s not guaranteed the image will be shown at the required size either. The submission guidelines for images are out of date and are meant for a much older feature and asset display layout.
 
@@ -76,7 +76,7 @@ This issue makes the sellers look less professional and thus lowers the percieve
 
 # Asset Images – More Sizing Issues
 
-![More Sizing Issues](images/mp/bandwidth.png)
+![More Sizing Issues](/images/mp/bandwidth.png)
 
 The preview images on an asset’s page are also laid out in a responsive way, causing image cut offs and other scaling issues. There is very little respect for aspect ratios for these image previews.
 
@@ -88,7 +88,7 @@ This issue also makes the sellers look less professional and thus lowers the per
 
 # Asset Images – Crazy Bandwidth
 
-![Bandwidth Issues](images/mp/bandwidth.png)
+![Bandwidth Issues](/images/mp/bandwidth.png)
 
 Every single asset image here is actually the full 1920x1080 image being scaled down. This greatly slows down page load speeds and puts more load on the web servers. When a seller submits a marketplace image, your backend should automatically generate thumbnails of those images for displaying in situations like this. Users often download far more image data than they ever need. This is even more significant in the already resource hogging launcher, where simply browsing the marketplace or even accidentally loading the launcher can be painfully slow or in some cases incredibly expensive on metered connections.
 
@@ -104,7 +104,7 @@ Depending on how the launcher was created, it could also be possible to switch t
 
 # Hide or At Least Obfuscate Seller Contact Info
 
-![Email Addresses](images/mp/plain-email.png)
+![Email Addresses](/images/mp/plain-email.png)
 
 Marketplace seller emails are listed in an easily parsed form. This means marketplace seller emails are subject to spam bots that work by bots that scrape webpages for email addresses.
 
@@ -112,25 +112,25 @@ Hiding them completely for users who do not own the item is one suggestion from 
 
 # Painful Navigation
 
-![Category Navigation](images/mp/categories.png)
+![Category Navigation](/images/mp/categories.png)
 
 There are a lot of marketplace assets, which is great. Having categories is great. The UX problem with categories and marketplace navigation is that it is hard to go back to them if you’re several pages deep within the marketplace. A sticky header would be a very welcome addition.
 
-![Launcher](images/mp/mp-launcher-header.png)
+![Launcher](/images/mp/mp-launcher-header.png)
 
 The launcher already has an excellent header on each of its marketplace pages. It just needs to be ‘sticky’ and not scroll with the page.
 
 The Vault can get easily out of hand with a large number of assets. Categories for the vault would also be helpful.
 
-![Library](images/mp/library.jpg)
+![Library](/images/mp/library.jpg)
 
 # The Most Annoying Back Button
 
-![Back Button](images/mp/back.png)
+![Back Button](/images/mp/back.png)
 
 When browsing the marketplace tab in the launcher, you are given this ‘Back’ button on any asset page. This is **the only time a Back button is displayed** and it should **always** go back a page in the marketplace. Instead, this ‘Back’ button provokes a launcher wide back action and makes navigation infuriating. For example, say you are looking at an asset but want to check out your library to see if you already have something similar. You decide you do so you go back to the marketplace section. Remember there is no ‘Back’ button unless you are on the Marketplace tab, so you have to click the Marketplace tab on the left. You then click the back button to go back to a category or search page, but suddenly you end up right back in your library. This behavior even exists across major tabs.
 
-[Click here for a video example of this painful behavior.](images/mp/back-video.mp4)
+[Click here for a video example of this painful behavior.](/images/mp/back-video.mp4)
 
 # No Shopping Cart
 
@@ -162,9 +162,11 @@ First, there are two separate set of guidelines:
 
 While similar, these guidelines are not identical. There should only be one master set of guidelines.
 
-The guidelines are often vague or very specific, and then their enforcement is also variable. This leads the community to think the marketplace staff is not a cohesive team but a group of people who clock in and clock out and do what they want. Every bad asset that gets through that clearly violates the guidelines and every vague rejection notice that doesn’t cite anything specific amplifies this problem. 
+The guidelines are often vague or very specific, and then their enforcement is also variable. This leads the community to think the marketplace staff is not a cohesive team but a group of people who clock in and clock out and do what they want. Every bad asset that gets through that clearly violates the guidelines and every vague rejection notice that doesn’t cite anything specific amplifies this problem.
+
+I believe writing a more formal and more detailed submission guideline would solve a lot of this ambiguity for both reviewers and the community. You can see my effort to do so here: [http://ue4.style](http://ue4.style)
 
 
 Epic staff often replies ‘thanks for your feedback’ and ‘we are making changes to address concerns’ but here is an example of a guideline and submission issue that’s been around for literally years now.
 
-![Guideline Error](images/mp/error.png)
+![Guideline Error](/images/mp/error.png)
