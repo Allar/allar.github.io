@@ -137,9 +137,9 @@ Others feel the same way one year ago.
 
 * [Forum thread](https://forums.unrealengine.com/showthread.php?99589-Can-you-mark-update-buttons-in-color-please)
 * [Another forum thread](https://forums.unrealengine.com/showthread.php?99722-Better-notifications-for-content-updates)
+* [Annoyed at update notifications, 09/2016](https://forums.unrealengine.com/showthread.php?124281-Marketplace-Updates)
 * [Similar request](https://forums.unrealengine.com/showthread.php?136275-Add-quot-update-quot-option-version-list-to-Vault-Content)
-
-
+* [Bonus: Show Update sizes request](https://forums.unrealengine.com/showthread.php?62716-Launcher-Show-download-size-before-downloading)
 
 
 # The Most Annoying Back Button
@@ -299,7 +299,7 @@ This by far isn't every little thing I'd like to change. But its a start. Things
 
 # More Opinion
 
-I love the marketplace. It has greatly benefited me as a seller, a buyer, and as a professional freelancer. It pains me to think of the marketplace as an Epic executive ignored and low priority branch, and I hope I'm proven wrong that this is not the case. The 30% cut from sellers hurts every month when sellers don't see continual improvement of the system and more engaging feedback. Feedback needs to be an open two-way street for sellers to feel like the system respects them.
+I love the marketplace. It has greatly benefited me as a seller, a buyer, and as a professional freelancer. It pains me to think of the marketplace as an Epic executive ignored and low priority branch, and I hope I'm proven wrong and that this is not the case. The 30% cut from sellers hurts every month when sellers don't see continual improvement of the system and more engaging feedback. Feedback needs to be an open two-way street for sellers to feel like the system respects them.
 
 # Dear Epic
 
