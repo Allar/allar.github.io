@@ -91,7 +91,7 @@ The scrolling thumbnail list has all of its images at the wrong aspect ratio, re
 
 The ‘big’ preview image is also not aspect ratio constrained, however this is less of an issue as with this layout it would be much harder to keep the original aspect ratio. However, one huge improvement is that the whole ‘Buy’ button area can be more responsive than it currently is. When the viewport shrinks to the point where the preview image far exceeds the its original width aspect ratio, the Supported Platforms, Supported Engine Versions, Share, and Buy button can become vertically stacked in one column instead of two. This would potentially allow the block to become less tall and to be moved up a bit, so that the ‘big’ preview image doesn’t need to be as tall, thus better preserving the aspect ratio.
 
-## However
+#### However
 
 Although this may contradict a bit with what I just wrote, Epic does do this when you squish the page real small. When it gets to this size though, the text is shrunk so much that now the opposite problem occurs where now so much space is wasted. Here, the gray box could still be stacked vertically as is shown here, but also to the right of the above info when at this size. There is plenty of width here to have them side by side while shortening this section as a whole. Also, while things are already being shrunk so small, why not make the 'big' image shorter to once again preserve aspect ratio?
 
