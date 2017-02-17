@@ -76,7 +76,7 @@ This issue makes the sellers look less professional and thus lowers the percieve
 
 # Asset Images – More Sizing Issues
 
-![More Sizing Issues](images/mp/bandwith.png)
+![More Sizing Issues](images/mp/bandwidth.png)
 
 The preview images on an asset’s page are also laid out in a responsive way, causing image cut offs and other scaling issues. There is very little respect for aspect ratios for these image previews.
 
@@ -88,7 +88,7 @@ This issue also makes the sellers look less professional and thus lowers the per
 
 # Asset Images – Crazy Bandwidth
 
-![Bandwidth Issues](images/mp/bandwith.png)
+![Bandwidth Issues](images/mp/bandwidth.png)
 
 Every single asset image here is actually the full 1920x1080 image being scaled down. This greatly slows down page load speeds and puts more load on the web servers. When a seller submits a marketplace image, your backend should automatically generate thumbnails of those images for displaying in situations like this. Users often download far more image data than they ever need. This is even more significant in the already resource hogging launcher, where simply browsing the marketplace or even accidentally loading the launcher can be painfully slow or in some cases incredibly expensive on metered connections.
 
@@ -122,7 +122,7 @@ The launcher already has an excellent header on each of its marketplace pages. I
 
 The Vault can get easily out of hand with a large number of assets. Categories for the vault would also be helpful.
 
-![Library](images/mp/library.png)
+![Library](images/mp/library.jpg)
 
 # The Most Annoying Back Button
 
