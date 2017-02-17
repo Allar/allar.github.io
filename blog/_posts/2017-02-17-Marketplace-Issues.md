@@ -1,3 +1,10 @@
+---
+layout: post
+title: "Opinions on Marketplace Issues"
+tags: [Allar, ue4, marketplace]
+thumbnail: "UE4-Annoying-Hat.gif"
+---
+
 What Is This About?
 ========
 
