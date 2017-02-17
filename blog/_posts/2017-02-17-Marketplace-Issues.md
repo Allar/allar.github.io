@@ -79,6 +79,8 @@ This issue makes the sellers look less professional and thus lowers the percieve
 
 # Asset Images – More Sizing Issues
 
+This issue also makes the sellers look less professional and thus lowers the percieved quality of the marketplace as a whole.
+
 ![More Sizing Issues](/images/mp/bandwidth.png)
 
 The preview images on an asset’s page are also laid out in a responsive way, causing image cut offs and other scaling issues. There is very little respect for aspect ratios for these image previews.
@@ -87,7 +89,11 @@ The scrolling thumbnail list has all of its images at the wrong aspect ratio, re
 
 The ‘big’ preview image is also not aspect ratio constrained, however this is less of an issue as with this layout it would be much harder to keep the original aspect ratio. However, one huge improvement is that the whole ‘Buy’ button area can be more responsive than it currently is. When the viewport shrinks to the point where the preview image far exceeds the its original width aspect ratio, the Supported Platforms, Supported Engine Versions, Share, and Buy button can become vertically stacked in one column instead of two. This would potentially allow the block to become less tall and to be moved up a bit, so that the ‘big’ preview image doesn’t need to be as tall, thus better preserving the aspect ratio.
 
-This issue also makes the sellers look less professional and thus lowers the percieved quality of the marketplace as a whole.
+## However
+
+Although this may contradict a bit with what I just wrote, Epic does do this when you squish the page real small. When it gets to this size though, the text is shrunk so much that now the opposite problem occurs where now so much space is wasted. Here, the gray box could still be stacked vertically as is shown here, but also to the right of the above info when at this size. There is plenty of width here to have them side by side while shortening this section as a whole. Also, while things are already being shrunk so small, why not make the 'big' image shorter to once again perserve aspect ratio?
+
+![Bandwidth Issues](/images/mp/vertical-stack.png)
 
 # Asset Images – Crazy Bandwidth
 
@@ -173,3 +179,26 @@ I believe writing a more formal and more detailed submission guideline would sol
 Epic staff often replies ‘thanks for your feedback’ and ‘we are making changes to address concerns’ but here is an example of a guideline and submission issue that’s been around for literally years now.
 
 ![Guideline Error](/images/mp/error.png)
+
+# Layout Quirks
+
+Navigating the UE4 web marketplace, you're bound to find a few quirks. Like this one. First, the recommend list is showing a list of assets by the seller who's seller's page I'm on. A bit redundant. Also, notice the extra padding for no reason?
+
+Every little quirk again lowers the percieved quality of the marketplace as a whole.
+
+![Layout Quirks](/images/mp/layout-quirks.png)
+
+# Contact And Support A Manual 'Hack'
+
+Instead of making contact and support details for assets a first class citizen in the data backend, they are tacked on to the end of 'Technical Details' by simply adding an 'h1' tag to make it appear as if its own section.
+
+The fact that the contact and support fields are not proper members of asset data irks me a bit. It makes me feel like sellers supporting their assets is not really a concern for the higher ups at Epic as they won't allocate the backend guy to rectify this, and instead have the marketplace staff perform more tedious and error prone manual work. 
+
+![Contact And Support](/images/mp/contactsupport.png)
+
+# Duplication of Data
+
+The launcher and the website share API endpoints, and often the same data. What I find curious is that even though Slate has a Rich Text widget, the launcher has to pull down technical details in a different way. Another small thing that by itself doesn't really matter, but when looked at alongside the bandwidth issues, sluggishness of the marketplace, and the ton of manual work the marketplace staff has to do behind the scenes; it adds to the feeling that the higher ups at Epic treat the marketplace as a low priority item and as long as it works, don't put too much effort to improve it. Again, this may not actually be the case, but this is what it *feels* like.
+
+![Technical Technical Technical](/images/mp/technicaltechnicaltechnical.png)
+
