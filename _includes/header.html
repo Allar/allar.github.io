@@ -35,6 +35,7 @@
             </ul>
           </li>
         {% elsif menu.submenu %}
+          {% if menu.url }
           <li class="header-item {{class}}"><a href="{{site.url}}{{menu.url}}"><h3>{{ menu.title }}</h3></a>
             <ul class="header-submenu">
               {% for sub in menu.submenu %}
@@ -43,7 +44,7 @@
             </ul>
           </li>
         {% else %}
-          <li class="header-item {{class}}"><a href="{{site.url}}{{menu.url}}"><h3>{{ menu.title }}</h3></a></li>
+          <li class="header-item {{class}}"><a href="{{menu.url}}"><h3>{{ menu.title }}</h3></a></li>
         {% endif %}
       {% endfor %}
       <li class="header-item"><a href="{{site.url}}/search"><h3><i class="fa fa-search"></i></h3></a></li>
