@@ -5,19 +5,21 @@ tags: [Allar, ue4, marketplace]
 thumbnail: "UE4-Annoying-Hat.gif"
 ---
 
+I want to start by making it very clear that I think the marketplace team is doing great and that Stephanie Markoff has been absolutely fantastic to work with. 
+
 On September 3rd, 2014, the UE4 Marketplace was launched. I released my first asset on the marketplace on June 30th, 2015.
 
-A lot of people come to me for advice about selling on the marketplace, as well as my thoughts and opinions on the marketplace as a whole. I have heavily experimented with the marketplace as a seller, a buyer, and an overall annoying member of the Unreal community.
+A lot of people come to me for advice about selling on the marketplace, as well as my thoughts and opinions on the marketplace. I have heavily experimented with the marketplace as a seller, a buyer, and an overall annoying member of the Unreal community.
 
 I decided to post my general concerns on my blog to hopefully spark some discussion, as well as having a page to link to when someone asks me my thoughts instead of reiterating my opinions.<!-- more -->
 
 I am an outsider of Epic and there could be things in this writing that are just plain wrong or are terrible ideas. If so, please reach out to me and I will edit accordingly.
 
-I love the marketplace. I love being a seller. However, a big part of me feels like the marketplace is ‘one of those random small teams’ at Epic and that the marketplace is one of Epic’s lower priorities. The marketplace staff is great, but appear to be resource deprived.
+I love the marketplace. I love being a seller. However, a big part of me feels like the marketplace is ‘one of those random small teams’ at Epic and that the marketplace is one of Epic’s lower priorities. The marketplace staff is great, but seem resource deprived.
 
 My issues and concerns with the marketplace are more geared toward the backend, not the frontend. A better and more automated backend would allow the support staff to help out sellers in better and faster ways. A better backend would also greatly improve the marketplace seller portal.
 
-An additional benefit of a better backend would be the support for third party marketplace tools. I have already created a system that tracks marketplace assets per user and reports the historical rating history of all tracked assets, so they can be notified when their asset rating changes. This was a proof of concept and much more can be learned about my third party marketplace proposal here:
+A pipe dream perhaps, but an added benefit of a better backend would be the support for third party marketplace tools. I have already created a proof of concept that tracks marketplace assets per user and reports the historical rating history of all tracked assets, so they can be notified when their asset rating changes. This was a proof of concept and much more can be learned about my third party marketplace proposal here:
 
 [Third-Party Marketplace Support Proposal](/assets/ThirdpartyMarketplaceSupportProposal.pdf)
 
@@ -75,11 +77,11 @@ Even if a seller follows submission guidelines for images exactly as written, it
 
 Image requirements and guidelines should change so that they properly represent what customers will see. If the layout is going to stick to a responsive fluid sizing for featured items, .PSD and .PNG templates should be given to sellers to show exactly how to create their images to avoid these issues. These templates should include things like title safe areas, cropping guidelines, etc.
 
-This issue makes the sellers look less professional and thus lowers the percieved quality of the marketplace as a whole.
+This issue makes the sellers look less professional and thus lowers the perceived quality of the marketplace.
 
 # Asset Images – More Sizing Issues
 
-This issue also makes the sellers look less professional and thus lowers the percieved quality of the marketplace as a whole.
+This issue also makes the sellers look less professional and thus lowers the percieved quality of the marketplace.
 
 ![More Sizing Issues](/images/mp/bandwidth.png)
 
@@ -91,7 +93,7 @@ The ‘big’ preview image is also not aspect ratio constrained, however this i
 
 ## However
 
-Although this may contradict a bit with what I just wrote, Epic does do this when you squish the page real small. When it gets to this size though, the text is shrunk so much that now the opposite problem occurs where now so much space is wasted. Here, the gray box could still be stacked vertically as is shown here, but also to the right of the above info when at this size. There is plenty of width here to have them side by side while shortening this section as a whole. Also, while things are already being shrunk so small, why not make the 'big' image shorter to once again perserve aspect ratio?
+Although this may contradict a bit with what I just wrote, Epic does do this when you squish the page real small. When it gets to this size though, the text is shrunk so much that now the opposite problem occurs where now so much space is wasted. Here, the gray box could still be stacked vertically as is shown here, but also to the right of the above info when at this size. There is plenty of width here to have them side by side while shortening this section as a whole. Also, while things are already being shrunk so small, why not make the 'big' image shorter to once again preserve aspect ratio?
 
 ![Bandwidth Issues](/images/mp/vertical-stack.png)
 
@@ -119,6 +121,8 @@ Marketplace seller emails are listed in an easily parsed form. This means market
 
 Hiding them completely for users who do not own the item is one suggestion from the community. Alternatively, another suggestion is obfuscating them if you don’t own them. The simple act of writing the shown email above as ‘tihomirvfx at gmail dot com’ cuts down on spam bots massively.
 
+I've advocated this for a long time now. Found a forum post by someone else created two months ago on the [marketplace seller only section of the forums](https://forums.unrealengine.com/showthread.php?132437-The-support-email-addresses-on-marketplace-item-pages) also concerned about this.
+
 # Painful Navigation
 
 ![Category Navigation](/images/mp/categories.png)
@@ -143,7 +147,9 @@ When browsing the marketplace tab in the launcher, you are given this ‘Back’
 
 # No Shopping Cart
 
-Currently there is no shopping cart feature of the marketplace. I’m aware one is coming soon however after a year of constant requests.
+Currently there is no shopping cart feature of the marketplace. I’m aware one is coming soon however after two years of constant requests.
+
+![Shopping Cart](/images/mp/shoppingcart.png)
 
 Honestly I don’t care about having a shopping cart, but the community would yell at me if I didn’t bring it up. Someone did bring up a good point that is absolutely worth mentioning however:
 
@@ -184,7 +190,7 @@ Epic staff often replies ‘thanks for your feedback’ and ‘we are making cha
 
 Navigating the UE4 web marketplace, you're bound to find a few quirks. Like this one. First, the recommend list is showing a list of assets by the seller who's seller's page I'm on. A bit redundant. Also, notice the extra padding for no reason?
 
-Every little quirk again lowers the percieved quality of the marketplace as a whole.
+Every little quirk again lowers the perceived quality of the marketplace as a whole.
 
 ![Layout Quirks](/images/mp/layout-quirks.png)
 
@@ -192,13 +198,91 @@ Every little quirk again lowers the percieved quality of the marketplace as a wh
 
 Instead of making contact and support details for assets a first class citizen in the data backend, they are tacked on to the end of 'Technical Details' by simply adding an 'h1' tag to make it appear as if its own section.
 
-The fact that the contact and support fields are not proper members of asset data irks me a bit. It makes me feel like sellers supporting their assets is not really a concern for the higher ups at Epic as they won't allocate the backend guy to rectify this, and instead have the marketplace staff perform more tedious and error prone manual work. 
+The fact that the contact and support fields are not proper members of asset data irks me a bit. It makes me feel like sellers supporting their assets is not really a concern for the higher-ups at Epic as they won't allocate the backend guy to rectify this, and instead have the marketplace staff perform more tedious and error prone manual work. 
 
 ![Contact And Support](/images/mp/contactsupport.png)
 
 # Duplication of Data
 
-The launcher and the website share API endpoints, and often the same data. What I find curious is that even though Slate has a Rich Text widget, the launcher has to pull down technical details in a different way. Another small thing that by itself doesn't really matter, but when looked at alongside the bandwidth issues, sluggishness of the marketplace, and the ton of manual work the marketplace staff has to do behind the scenes; it adds to the feeling that the higher ups at Epic treat the marketplace as a low priority item and as long as it works, don't put too much effort to improve it. Again, this may not actually be the case, but this is what it *feels* like.
+The launcher and the website share API endpoints, and often the same data. What I find curious is that even though Slate has a Rich Text widget, the launcher has to pull down technical details in a different way. Another small thing that by itself doesn't really matter, but when looked at alongside the bandwidth issues, sluggishness of the marketplace, and the ton of manual work the marketplace staff has to do behind the scenes; it adds to the feeling that the higher-ups at Epic treat the marketplace as a low priority item and as long as it works, don't put too much effort to improve it. Again, this may not actually be the case, but this is what it *feels* like.
 
 ![Technical Technical Technical](/images/mp/technicaltechnicaltechnical.png)
+
+# Feature Regression, Not Improvement
+
+Touching more on things that make the marketplace feel like a low priority for Epic executives is the fact that sometimes great features get removed.
+
+One great thing about the marketplace was the real-time sales data available on the marketplace dashboard. That has been removed and now the sales report only updates every 24 hours, meaning you can't see today's sales until tomorrow.
+
+Waiting 24 hours to see sales isn't too much a big deal for me, but the fact that this nicety was removed instead of expanded on has angered many sellers and is just more salt in the wound that is the marketplace seller's shared frustration over the lack of marketplace development. More analytics is something many sellers have requested, and instead we get data removed.
+
+The reasoning for this is that the real-time sales reports were putting too much of a strain on the marketplace backend servers.
+
+[Marketplace Seller only forum thread regarding this.](https://forums.unrealengine.com/showthread.php?127547-Sales-Report-Changes-amp-You)
+
+This again feels like the result of the marketplace asset count increasing but remaining a low priority system for Epic. There are many possible optimization points (see some of the previous issues) that can be done on the frontend to free up a ton of resources for just browsing, many which the community has been requesting for over two years. If feedback is being listened to, why has development slowed to the point of actually going backwards?
+
+Again, there are probably other reasons surrounding this situation, but it **feels** like Epic is starving the marketplace of resources.
+
+# Analytics
+
+Another issue contributing to the 'low priority' feeling is the lack of analytics. This can only be solved with marketplace development and has been an issue for sellers since launch and is rarely discussed by Epic.
+
+Currently the list of available analytics regarding assets for sellers on the seller portal is:
+
+* Number of units sold
+
+Thats it. Seriously. That is all. There are reports from sellers that their history of units sold has also been truncated, so they don't even have numbers going back to asset release date.
+
+# Communication To Marketplace Staff
+
+Communicating to the marketplace staff is both incredibly convenient and excruciatingly painful. After what appeared to be a ticket system failure, then having two ticket systems, then a merging of ticket systems, many requests were lost and often sellers have to ask 'do you have a ticket for this?' and 'can you please check on this request for me?'.
+
+I believe this has been getting better however, but it still can be an issue.
+
+Also, if you ever need to ask the marketplace staff about multiple things, *please take this approach for best results:*
+
+1. Write an email *per* request. Meaning if you want to change your asset description and change an image, send two emails. It's not uncommon for your request to have the first request fulfilled and the second request ignored, possibly due to how the marketplace ticketing system works.
+
+1. Wait at least 10 minutes between request emails. If you send two support emails too quickly, there is a chance you won't get a confirmation email on the second request. Sometimes this results in a ticket made, other times it won't. It's impossible to know if this happens without asking marketplace staff or submitting a third request.
+
+# Communication From Marketplace Staff and Epic
+
+Currently marketplace sellers are experiencing a shared frustration that is communication from the marketplace team is infrequent and inadequate.
+
+## System Failures
+
+When something goes wrong with the marketplace system, panic ensues. When the issue is solved, most of the time the reasoning about the issue is *purposely* vague. Most of these communications that quickly reach the seller community happen through Discord and not through official channels. 
+
+## Feedback Follow-up
+
+When a rise of feedback occurs about negative things, it's often to see staff members reply 'thanks for the feedback, we are taking steps to address this.' Months go by and when asked for a follow-up to that statement, either none is given or usually something along the lines of 'priorities changed.' Very few times has Epic been clear that 'we are doing this, and we have achieved this, based on your feedback regarding this'. This creates a sort of feeling that the marketplace staff has their hands tied and while they mean well, they might be in an impossible situation where they know what issues exist and simply can't fix them, further adding to the 'low priority' issue I mentioned previously.
+
+Note: Some of these thread links are in a marketplace seller only section of the forums. The marketplace seller section of the forums, named Creators Hub, is not bustling with activity, so it's fairly easy to keep aware of threads even if read once a week.
+
+Examples:
+* [This entire thread](https://forums.unrealengine.com/showthread.php?60299-The-Unreal-Marketplace-Improvement-and-Feedback-Thread)
+* [Condensed seller feedback thread, that was STICKIED a year ago, with no Epic responses](https://forums.unrealengine.com/showthread.php?99665-Feature-request-and-F-A-Q-thread)
+* [Plans for a Marketplace Roadmap by Epic 9 months ago, still no manifestation in any official form.](https://forums.unrealengine.com/showthread.php?111452-Marketplace-Roadmap&p=534887&viewfull=1#post534887)
+* [This post written by not me explaining this exact feeling 3 months ago.](https://forums.unrealengine.com/showthread.php?128196-Creators-Hub-Feedback-and-Suggestions&p=620779&viewfull=1#post620779)
+* [Month ago, seller thread asking about this issue, no response.](https://forums.unrealengine.com/showthread.php?134916-Where-are-the-promised-Marketplace-feature-updates)
+* Two years in the making:
+![Shopping Cart](/images/mp/shoppingcart.png)
+* [Shopping Cart, Search rolled out over several months. Improvements are to be discussed in the future.](https://forums.unrealengine.com/showthread.php?136136-2017-Marketplace-Improvements)
+
+## Rejections
+
+When rejecting an asset, the rejection notice from the marketplace staff can be pretty vague, unclear, or simply not given. People often report this in Discord/Slack, but there are forum threads indicating this has been a long-term problem as well.
+
+![Rejected Vagueness](/images/mp/rejects.png)
+
+# More Opinion
+
+I love the marketplace. It has greatly benefited me as a seller, a buyer, and as a professional freelancer. It pains me to think of the marketplace as an Epic executive ignored and low priority branch, and I hope I'm proven wrong that this is not the case. The 30% cut from sellers hurts every month when sellers don't see continual improvement of the system and more engaging feedback. Feedback needs to be an open two-way street for sellers to feel like the system respects them.
+
+# Dear Epic
+
+If there is one thing I want Epic to take away from this write-up, if they read it at all, I would absolutely love to see the marketplace team be devoted more and permanent resources to further marketplace development. Empowering the marketplace team by giving them tools to remove the human element out of the marketplace processes will allow humans to spend less time dealing with sellers asking for support and more time supporting sellers by keeping a healthy marketplace and continual improvement.
+
+
 
