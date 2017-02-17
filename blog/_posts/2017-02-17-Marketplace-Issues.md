@@ -113,16 +113,6 @@ Moving to HTTP/2 would mean that users do not have to issue a request for every 
 
 Depending on how the launcher was created, it could also be possible to switch to HTTP/2 as well. This would be a factor in helping remove the launcher’s ‘slugishness’.
 
-# Hide or At Least Obfuscate Seller Contact Info
-
-![Email Addresses](/images/mp/plain-email.png)
-
-Marketplace seller emails are listed in an easily parsed form. This means marketplace seller emails are subject to spam bots that work by bots that scrape webpages for email addresses.
-
-Hiding them completely for users who do not own the item is one suggestion from the community. Alternatively, another suggestion is obfuscating them if you don’t own them. The simple act of writing the shown email above as ‘tihomirvfx at gmail dot com’ cuts down on spam bots massively.
-
-I've advocated this for a long time now. Found a forum post by someone else created two months ago on the [marketplace seller only section of the forums](https://forums.unrealengine.com/showthread.php?132437-The-support-email-addresses-on-marketplace-item-pages) also concerned about this.
-
 # Painful Navigation
 
 ![Category Navigation](/images/mp/categories.png)
@@ -193,6 +183,18 @@ Navigating the UE4 web marketplace, you're bound to find a few quirks. Like this
 Every little quirk again lowers the perceived quality of the marketplace as a whole.
 
 ![Layout Quirks](/images/mp/layout-quirks.png)
+
+# Hide or At Least Obfuscate Seller Contact Info
+
+![Email Addresses](/images/mp/plain-email.png)
+
+Marketplace seller emails are listed in an easily parsed form. This means marketplace seller emails are subject to spam bots that work by bots that scrape webpages for email addresses.
+
+Hiding them completely for users who do not own the item is one suggestion from the community. Alternatively, another suggestion is obfuscating them if you don’t own them. The simple act of writing the shown email above as ‘tihomirvfx at gmail dot com’ cuts down on spam bots massively.
+
+I've advocated this for a long time now. Found a forum post by someone else created two months ago on the [marketplace seller only section of the forums](https://forums.unrealengine.com/showthread.php?132437-The-support-email-addresses-on-marketplace-item-pages) also concerned about this.
+
+Note: If you change your seller support email on file, you have to tell the marketplace staff to update your assets as due to the next topic, its manually copy pasted by marketplace staff.
 
 # Contact And Support A Manual 'Hack'
 
