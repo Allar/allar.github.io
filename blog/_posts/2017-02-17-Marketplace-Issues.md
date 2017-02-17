@@ -127,6 +127,21 @@ The Vault can get easily out of hand with a large number of assets. Categories f
 
 ![Library](/images/mp/library.jpg)
 
+One user's [forum thread suggestion](https://forums.unrealengine.com/showthread.php?135400-Folders-in-the-Launcher) regarding the library organization.
+
+# Finding Library Updates
+
+[Finding library updates can be annoying. Click for reference.](/images/mp/library-update-notification.mp4)
+
+Others feel the same way one year ago.
+
+* [Forum thread](https://forums.unrealengine.com/showthread.php?99589-Can-you-mark-update-buttons-in-color-please)
+* [Another forum thread](https://forums.unrealengine.com/showthread.php?99722-Better-notifications-for-content-updates)
+* [Similar request](https://forums.unrealengine.com/showthread.php?136275-Add-quot-update-quot-option-version-list-to-Vault-Content)
+
+
+
+
 # The Most Annoying Back Button
 
 ![Back Button](/images/mp/back.png)
